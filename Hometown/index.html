@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>hometown</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--Jquery UI-->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="js/uitheme.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<script>
+  $(function() {
+    var select = $( "#population" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 5,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#minbeds" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+  $(function() {
+    var select = $( "#miles_from" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 5,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#miles_from" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+
+  $(function() {
+    var select = $( "#afford" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 4,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#afford" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+    $(function() {
+    var select = $( "#diversity" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 4,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#diversity" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+      $(function() {
+    var select = $( "#school" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 4,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#school" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+  $(function() {
+    var select = $( "#safety" );
+    var slider = $( "<div id='slider'></div>" ).insertBefore( select ).slider({
+      min: 1,
+      max: 4,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#safety" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+
+$(function() {
+    var availableTags = [
+      "Abington", "Acton", "Acushnet", "Adams", "Agawam", "Alford", "Amesbury", "Amherst", "Andover", "Aquinnah", "Arlington", "Ashburnham", "Ashby", "Ashfield", "Ashland", "Athol", "Attleboro", "Auburn", "Avon", "Ayer", "Barnstable", "Barre", "Becket", "Bedford", "Belchertown", "Bellingham", "Belmont", "Berkley", "Berlin", "Bernardston", "Beverly", "Billerica", "Blackstone", "Blandford", "Bolton", "Boston", "Bourne", "Boxborough", "Boxford", "Boylston", "Braintree", "Brewster", "Bridgewater", "Brimfield", "Brockton", "Brookfield", "Brookline", "Buckland", "Burlington", "Cambridge", "Canton", "Carlisle", "Carver", "Charlemont", "Charlton", "Chatham", "Chelmsford", "Chelsea", "Cheshire", "Chester", "Chesterfield", "Chicopee", "Chilmark", "Clarksburg", "Clinton", "Cohasset", "Colrain", "Concord", "Conway", "Cummington", "Dalton", "Danvers", "Dartmouth", "Dedham", "Deerfield", "Dennis", "Dighton", "Douglas", "Dover", "Dracut", "Dudley", "Dunstable", "Duxbury", "East Bridgewater", "East Brookfield", "East Longmeadow", "Eastham", "Easthampton", "Easton", "Edgartown", "Egremont", "Erving", "Essex", "Everett", "Fairhaven", "Fall River", "Falmouth", "Fitchburg", "Florida", "Foxborough", "Framingham", "Franklin", "Freetown", "Gardner", "Georgetown", "Gill", "Gloucester", "Goshen", "Gosnold", "Grafton", "Granby", "Granville", "Great Barrington", "Greenfield", "Groton", "Groveland", "Hadley", "Halifax", "Hamilton", "Hampden", "Hancock", "Hanover", "Hanson", "Hardwick", "Harvard", "Harwich", "Hatfield", "Haverhill", "Hawley", "Heath", "Hingham", "Hinsdale", "Holbrook", "Holden", "Holland", "Holliston", "Holyoke", "Hopedale", "Hopkinton", "Hubbardston", "Hudson", "Hull", "Huntington", " Ipswich", "Kingston", "Lakeville", "Lancaster", "Lanesborough", "Lawrence", "Lee", "Leicester", "Lenox", "Leominster", "Leverett", "Lexington", "Leyden", "Lincoln", "Littleton", "Longmeadow", "Lowell", "Ludlow", "Lunenburg", "Lynn", "Lynnfield", "Malden", "Manchester-by-the-Sea", "Mansfield", "Marblehead", "Marion", "Marlborough", "Marshfield", "Mashpee", "Mattapoisett", "Maynard", "Medfield", "Medford", "Medway", "Melrose", "Mendon", "Merrimac", "Methuen", "Middleborough", "Middlefield", "Middleton", "Milford", "Millbury", "Millis", "Millville", "Milton", "Monroe", "Monson", "Montague", "Monterey", "Montgomery", "Mount Washington", "Nahant", "Nantucket", "Natick", "Needham", "New Ashford", "New Bedford", "New Braintree", "New Marlborough", "New Salem", "Newbury", "Newburyport", "Newton", "Norfolk", "North Adams", "North Andover", "North Attleborough", "North Brookfield", "North Reading", "Northampton", "Northborough", "Northbridge", "Northfield", "Norton", "Norwell", "Norwood", "Oak Bluffs", "Oakham", "Orange", "Orleans", "Otis", "Oxford", "Palmer", "Paxton", "Peabody", "Pelham", "Pembroke", "Pepperell", "Peru", "Petersham", "Phillipston", "Pittsfield", "Plainfield", "Plainville", "Plymouth", "Plympton", "Princeton", "Provincetown", "Quincy", "Randolph", "Raynham", "Reading", "Rehoboth", "Revere", "Richmond", "Rochester", "Rockland", "Rockport", "Rowe", "Rowley", "Royalston", "Russell", "Rutland", "Salem", "Salisbury", "Sandisfield", "Sandwich", "Saugus", "Savoy", "Scituate", "Seekonk", "Sharon", "Sheffield", "Shelburne", "Sherborn", "Shirley", "Shrewsbury", "Shutesbury", "Somerset", "Somerville", "South Hadley", "Southampton", "Southborough", "Southbridge", "Southwick", "Spencer", "Springfield", "Sterling", "Stockbridge", "Stoneham", "Stoughton", "Stow", "Sturbridge", "Sudbury", "Sunderland", "Sutton", "Swampscott", "Swansea", "Taunton", "Templeton", "Tewksbury", "Tisbury", "Tolland", "Topsfield", "Townsend", "Truro", "Tyngsborough", "Tyringham", "Upton", "Uxbridge", "Wakefield", "Wales", "Walpole", "Waltham", "Ware", "Wareham", "Warren", "Warwick", "Washington", "Watertown", "Wayland", "Webster", "Wellesley", "Wellfleet", "Wendell", "Wenham", "West Boylston", "West Bridgewater", "West Brookfield", "West Newbury", "West Springfield", "West Stockbridge", "West Tisbury", "Westborough", "Westfield", "Westford", "Westhampton", "Westminster", "Weston", "Westport", "Westwood", "Weymouth", "Whately", "Whitman", "Wilbraham", "Williamsburg", "Williamstown", "Wilmington", "Winchendon", "Winchester", "Windsor", "Winthrop", "Woburn", "Worcester", "Worthington", "Wrentham", "Yarmouth"
+    ];
+    $( "#town_name" ).autocomplete({
+      source: availableTags
+    });
+  });
+  
+    $(function() {
+    $( "#tabs" ).tabs();
+  });
+
+
+  </script>
+<script>
+
+window.onload = function() {
+document.getElementById("town_name1").innerHTML=name1;
+document.getElementById("town_nameh1").innerHTML=name1 + ", MA";
+document.getElementById("town_pop1").innerHTML=pop1;
+document.getElementById("town_price1").innerHTML="$" + price1;
+}
+
+
+
+
+</script>
+
+    </head>
+<div class='container'>
+        <header class='header'>
+                <img src='hometown.png'/>
+                <h3>BY ABDI, NICK, AND TOM</h3>
+                <hr />
+            </header>
+    <body>
+    <div id='page1'>
+        <h1><em>What town are you looking for?</em></h1>
+            <form class ='form' action="findTown.php" method="get">
+                 <label for="town_name"><div id='center'>FIND A TOWN NEAR... (Optional)</div></label>
+                    <input type='text' id='town_name' name='town_name' placeholder='i.e. Boston,  Amherst,  etc...'>
+                <div class ='form-column'>
+                    <label for="miles_from">HOW FAR? (Optional)</label>
+                    <select id='miles_from' name='miles_from'>
+                        <option>No Preference</option>
+                        <option>15 miles</option>
+                        <option>30 miles</option>
+                        <option>50 miles</option>
+                        <option>100+ miles</option>
+                    </select>
+                
+                     <label for="afford">AFFORDABILITY</label>
+                     <select name="afford" id="afford">
+                        <option>No Preference</option>
+                        <option>Not Important</option>
+                        <option>Important</option>
+                        <option>Very Important</option>
+                     </select>
+
+
+                    <label for="safety">SAFETY</label>
+                    <select id='safety' name='safety'>
+                        <option>No Preference</option>
+                        <option>Not Important</option>
+                        <option>Important</option>
+                        <option>Very Important</option>
+                    </select>
+
+                </div>
+
+                <div class='form-column'>
+                    
+                    <label for="population">POPULATION SIZE</label>
+                     <select name="population" id="population">
+                        <option>No Preference</option>
+                        <option>Small Town</option>
+                        <option>Large Town</option>
+                        <option>Small City</option>
+                        <option>Large City</option>
+                     </select>
+
+
+                    <label for="diversity">DIVERSITY*</label>
+                    <select id='diversity' name='diversity'>
+                        <option>No Preference</option>
+                        <option>Not Important</option>
+                        <option>Important</option>
+                        <option>Very Important</option>
+                    </select>
+
+                     <label for="school">SCHOOL RANKINGS*</label>
+                    <select id='school' name='school'>
+                        <option>No Preference</option>
+                        <option>Not Important</option>
+                        <option>Important</option>
+                        <option>Very Important</option>
+                    </select><br/>
+                </div>
+                <h2><br/>*=feature not yet avialable</h2>
+            
+             <div class='submit_wrap'><input type="submit"></div></form>
+    </div>
+  </div>
+</div>
+    </body>
+</html>
