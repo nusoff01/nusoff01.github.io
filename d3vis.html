@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<style></style>
+</head>
+<body>
+<script type="text/JavaScript">
+
+    var canvas = d3.select("body").append("svg")
+    .attr("height", 500)
+    .attr("width", 500)
+    .append("g")
+        .attr("transform", "translate(50, 50)");
+
+    var tree = d3.layout.tree()
+        .size([400, 400]);
+
+    d3.json("playsByDown.json", function (data) {
+
+        var nodes = tree.nodes(data);
+        var links = tree.links(nodes);
+
+        var node = canvas.selectAll(".node")
+            .data(nodes)
+            .enter()
+            .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {return "translate(" + d.y + "," + d.x + ")"});
+
+
+
+        node.append("text")
+            .text(function (d) { return d.name})
+            .attr("y", "-30");
+
+        var diagonal = d3.svg.diagonal().projection(function (d) {return [d.y, d.x];});
+
+        canvas.selectAll(".link")
+            .data(links)
+            .enter()
+            .append("path")
+            .attr("class", "link")
+            .attr("fill", "none")
+            .attr("stroke", "black")
+            .attr("d", diagonal)
+            .attr("stroke-width", function(d){
+                return d.target.w;
+            });
+
+    });
+
+
+</script>
+
+
+
+</body>
+</html>

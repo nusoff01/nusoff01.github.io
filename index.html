@@ -1,180 +1,316 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+    <title>Nick Usoff Portfolio</title>
+    <!-- Meta -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick Usoff's Site</title>
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <meta name="description" content="Responsive HTML5 Website landing Page for Developers">
+    <meta name="author" content="3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <!-- github acitivity css -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <link rel="stylesheet" href="http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.css">
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-
-
-<!--[if lte IE 8]>
-
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
-
-<![endif]-->
-<!--[if gt IE 8]><!-->
-
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-
-<!--<![endif]-->
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/styles.css">
-    <!--<![endif]-->
-
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <script type="text/javascript" src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
-    <script src="js/main.js"></script>
 
 </head>
+
 <body>
-<div class="header">
-    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+    <!-- ******HEADER****** -->
+    <header class="header">
+        <div class="container">
+            <img class="profile-image img-responsive pull-left" src="assets/images/prof-pic.jpg" alt="James Lee" />
+            <div class="profile-content pull-left">
+                <h1 class="name">Nick Usoff</h1>
+                <h2 class="desc">Student at Tufts University</h2>
+                <ul class="social list-inline">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/nusoff01/"><i class="fa fa-github-alt"></i></a></li>
+                </ul>
+            </div><!--//profile-->
+            <a class="btn btn-cta-primary pull-right" href="http://themes.3rdwavemedia.com/" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
+        </div><!--//container-->
+    </header><!--//header-->
 
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-    </div>
-</div>
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                            <p>Hello! I'm Nick Usoff, a computer science student
+                            at Tufts University. Currently I dedicate my time to
+                            schoolwork, TAing for an intro level CS class, running
+                            on the Tufts track team, and working on side projects.
+                            I love all things comp sci, though my focus has been on
+                            back end web development recently, mainly with Node.js
+                            and Java.</p>
 
-<div class="splash-container">
-    <div class="splash">
-        <h1 class="splash-head">Nick Usoff</h1>
-        <p class="splash-subhead">
-            Computer Science student at Tufts University
-        </p>
-        <hr/>
         <p>
-            <a href="https://github.com/nusoff01" class="pure-button pure-button-primary">Github</a>
-            <a href="https://www.linkedin.com/pub/nick-usoff/46/aba/5a0/" class="pure-button pure-button-primary">Linkedin</a>
-            <a href="https://www.facebook.com/tehusoff" class="pure-button pure-button-primary">Facebook</a>
-
+            When I have some free time, I also like to do things like discuss public health
+            policy and how the technology revolution can help change the industry, or how
+            the internet can help groups communicate and spread information. I have some
+            ideas for big projects I'd like to take on in the future, and if you want to
+            talk with me about things like health information exchange, technology to reduce
+            food waste, or any topic related to health or food policy and advancement
+            please shoot me an email, I'd love to hear from you!
         </p>
-    </div>
-</div>
+        <p>
+            Something I've gotten into more recently is data science and visualization.
+            I've focused mainly on sports so far, but if you have any data sets you'd
+            think would be cool to analyze let me know! <a href="#">Check out my blog </a>
+            for some of my data driven journalism pieces
+        </p>
 
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center" id="portfolio">A sample of some of my work</h2>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//section-->
 
-        <div class="pure-g">
-            <div class="l-box pure-u-1-4">
-            <img class="pure-img icon-img" src="img/trainIcon.jpg" alt="train-icon">
-            </div>
-            <div class="l-box pure-u-3-4">
-                <h3 class="content-subhead">
-                    Transit
-                </h3>
-                <p>
-                    A project which uses the MBTA API in order to render a map of the MBTA stations on a given line, along with the schedules of the upcoming trains, and the nearest location to you base on your current location. Implemented in vanilla JavaScript
-                </p>
-                <h3>
-                    [JavaScript]
-                </h3>
-                <div class="content-footer">
-                    <a href="transit/index.html" class="pure-button pure-button-primary">view project</a>
-                    <a href="https://github.com/NickUsoff/transit" class="pure-button pure-button-primary">view code</a>
-                </div>
-            </div>
-            <div class="l-box pure-u-1-4">
-            <img class="pure-img" src="img/2048logo.png" alt="train-icon">
-            </div>
-            <div class="l-box pure-u-3-4">
-                <h3 class="content-subhead">
-                    The 2048 Gamecenter
-                </h3>
-                <p>
-                    A project which revolves around the internet sensation 2048, this is a mongoDB database of scores and final board positions, as well as an API written in node.js to write to and access the database. All of this is packaged in an Express application.
-                </p>
-                <div class="content-footer">
-                    <h3>[JavaScript]</h3>
-                    <a href="https://github.com/NickUsoff/2048-gamecenter" class="pure-button pure-button-primary">view code</a>
-                </div>
-            </div>
-            <div class="l-box pure-u-1-4">
-                <img class="pure-img" src="Hometown/hometown3.png" alt="hometown-icon">
-            </div>
+               <section class="latest section">
+                    <div class="section-inner">
+                        <h2 class="heading">Latest Projects</h2>
+                        <div class="content">
 
-            <div class="l-box pure-u-3-4">
-                <h3 class="content-subhead">
-                    Hometown
-                </h3>
-                <p>
-                    Know that you want to move to Massachusetts, but not sure which town to live in? Use Hometown! A search engine for towns, you can specify what is important to you, be it schools or safety, and hometown will give you the towns which best suit your needs. Implemented primarily in PHP
-                </p>
-                <div class="content-footer">
-                    <h3>[PHP] [HTML]</h3>
-                    <a href="https://github.com/NickUsoff/Hometown" class="pure-button pure-button-primary">view code</a>
-                </div>
-            </div>
-            <div class="l-box pure-u-1-4">
-            <img class="pure-img" src="img/urinal-icon.png" alt="urinal-icon">
-            </div>
-            <div class="l-box pure-u-3-4">
-                <h3 class="content-subhead">
-                    Peer-to-Peer Text
-                </h3>
-                <p>
-                    Buying textbooks sucks - peer to peer text tries to make it
-                    suck less. Users sign up for an account and can list
-                    textbooks (matched against our database of textbooks and
-                    classes), or find books by class or title. Implemented as
-                    an express app using Node.js and MongoDB on the back end,
-                    and Javascript and JQuery on the frontend.
-                </p>
-                <div class="content-footer">
-                    <h3>
-                    [JavaScript] [Node.js] [MongoDB] [HTML] [JQuery]
+                            <div class="item featured text-center">
+                                <h3 class="title"><a href="http://nusoff01.github.io/reasonable-care/" target="_blank">Reasonable Care 0.2</a></h3>
+                                <p class="summary">A web app to find a health care provider in Massachusetts</p>
+                                <div class="featured-image">
+                                    <a href="http://nusoff01.github.io/reasonable-care/" target="_blank">
+                                    <img class="img-responsive project-image" src="assets/images/projects/reasonable-care-0.2.png" alt="Reasonable Care 0.2" />
+                                    </a>
+                                <div class="desc text-left">
+                                    <p>
+                                        The revamped Reasonable Care site, his time focusing on finding a health care provider. Angular.js is used extensively to rank health care plans on the Massachusetts health exchange, and give the user the best heatlh care plan for their needs.
+                                    </p>
+                                </div><!--//desc-->
+                                <a class="btn btn-cta-secondary" href="http://nusoff01.github.io/reasonable-care/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Try it!</a>
+                            </div><!--//item-->
+                            <hr class="divider" />
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://p2ptext.com/" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/p2ptext.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a href="http://p2ptext.com/" target="_blank">P2P Text</a></h3>
+                                    <p>I spent this past summer trying to tackle the task of creating a textbook exchange for students at Tufts. I created a system where students could post textbooks at a price of their choosing, search for textbooks by class or by name, and interact with people they are buying or selling a textbook with. Though my timing was a bit off and it never really caught on, I still learned a lot about Node.js, MongoDB, Angular.js, and the Express framework</p>
+                                    <p><a class="more-link" href="http://p2ptext.com/" target="_blank"><i class="fa fa-external-link"></i> Check it out!</a></p>
+                                </div><!--//desc-->
+                            </div><!--//item-->
 
-                    </h3>
-                    <a href="http://p2ptext.com" class="pure-button pure-button-primary">view project</a>
-                    <a href="https://github.com/nusoff01/jumbos-gsd" class="pure-button pure-button-primary">view code</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
+                            <div class="item row">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.reasonable.care/" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/project-RC1.png" alt="project name" />
+                                </a>
+                                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                    <h3 class="title"><a href="http://www.reasonable.care/" target="_blank">Reasonable Care 0.1</a></h3>
+                                    <p>Reasonable Care started at the Fall 2014 Tufts Hackathon, as an application to help people without health insurance find a hospital to go to based on which condition they had as well as which quality metrics they care about. The app ended up winning the "Hack for Good" prize at the hackathon, and I got a lot of good feedback! It is built in Angular.js</p>
+                                    <p><a class="more-link" href="http://www.reasonable.care/" target="_blank"><i class="fa fa-external-link"></i> Try it!</a></p>
+                                </div><!--//desc-->
+                            </div><!--//item-->
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//section-->
 
 
 
-    <div class="content" >
-        <h2 class="content-head is-center">Have questions? Get in touch.</h2>
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title">Teaching Assistant - </span> <span class="place"><a href="http://www.cs.tufts.edu/">Tufts University </a></span><span class="year">(2014 - Present)</span></h3>
+                                <p>I assist in the Intro to Computer Science class at Tufts, fulfilling duties such as running weekly labs, holding office hours, grading, and generally just being there for all those students who are just getting started in the field</p>
+                            </div><!--//item-->
 
-        <div class="pure-g contact-me">
-            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <h4>Get in touch</h4>
-                <p>
-                    Have any questions for me? Shoot me an email with the form on this page, provide your address, and I'll get back to you as soon as I can.
-                </p>
-            </div>
+                            <div class="item">
+                                <h3 class="title">Robotics Instructor - <span class="place"><a href="http://www.collegegate.org/gate-fowler-school.php">College Gate Summer Camps</a></span> <span class="year">(2012)</span></h3>
+                                <p>I helped students learn the joys of robotics in daily 90 minute sessions. I used knowledge gained from five years on robotics teams (FIRST Lego League and FIRST Tech Challenge) to help kids get started building their own robots in a structured environment</p>
+                            </div><!--//item-->
 
-            <div class="l-box-lrg pure-u-1 pure-u-md-3-5" id="contact">
-                <form class="pure-form pure-form-stacked">
-                    <fieldset class="contact-me">
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//section-->
+            </div><!--//primary-->
+            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+                 <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading sr-only">Basic Information</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Boston, MA, US</li>
+                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">nicholas.usoff@tufts.edu</a></li>
+                                <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="#">http://www.nickusoff.com</a></li>
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//aside-->
 
-                        <label for="name">Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
+                <aside class="skills aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Skills</h2>
+                        <div class="content">
+                            <p class="intro">
+                                Software engineering with a focus on back end web
+                                development and lower level programming</p>
 
+                            <div class="skillset">
+                                <div class="item">
+                                    <h3 class="level-title">C++<span class="level-label">Knowledgeable</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="70%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
 
-                        <label for="email">Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
+                                <div class="item">
+                                    <h3 class="level-title">C <span class="level-label">Knowledgeable</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="70%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
 
-                        <label for="comments">Comments, questions, etc.</label>
-                        <textarea id="comments" type="text" placeholder="Your comments"  rows="6"></textarea>
-                        <button type="submit" class="pure-button" onclick="sendTheMail();return false;">Email me</button>
-                    </fieldset>
-                </form>
-                <div id="formResponse"></div>
-            </div>
-        </div>
+                                <div class="item">
+                                    <h3 class="level-title">Node.js<span class="level-label">Knowledgeable</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="65%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                                <div class="item">
+                                    <h3 class="level-title">x86 Assembly<span class="level-label">Proficient</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="60%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                                <div class="item">
+                                    <h3 class="level-title">JavaScript + jQuery<span class="level-label">Proficient</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="55%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                                <div class="item">
+                                    <h3 class="level-title">HTML5 + CSS3<span class="level-label">Knowledgeable</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="50%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                                <div class="item">
+                                    <h3 class="level-title">R<span class="level-label">Learning</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="30%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                                <div class="item">
+                                    <h3 class="level-title">d3 and Google Charts<span class="level-label">Learning</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="30%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
 
-    </div>
-</div>
+                            </div>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+                <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title"><i class="fa fa-graduation-cap"></i> BS Computer Science</h3>
+                                <h4 class="university">Tufts University <span class="year">(2013-2017)</span></h4>
+                            </div><!--//item-->
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+                <aside class="blog aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Latest Blog Posts</h2>
+                        <div id="rss-feeds" class="content">
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+                <aside class="list music aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Music Picks of the Month</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-headphones"></i> <a href="http://www.last.fm/music/Trent+Reznor+and+Atticus+Ross/Gone+Girl:+Soundtrack+from+the+Motion+Picture">Gone Girl OST (Trent Reznor and Atticus Ross)</a></li>
+                                <li><i class="fa fa-headphones"></i> <a href="http://www.last.fm/music/OutKast/Stankonia">Stankonia (Outkast)</a></li>
+                                <li><i class="fa fa-headphones"></i> <a href="http://www.last.fm/music/Tool/%C3%86nima"> Ænima (Tool)</a></li>
+                                <li><i class="fa fa-headphones"></i> <a href="http://www.last.fm/music/Arcade+Fire/Reflektor?ac=reflektor">Reflektor (Arcade Fire)</a></li>
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+                <aside class="credits aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Credits</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><a href="http://getbootstrap.com/" target="_blank"><i class="fa fa-external-link"></i> Bootstrap 3.2</a></li>
+                                <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fa fa-external-link"></i> FontAwsome 4.1</a></li>
+                                <li><a href="http://jquery.com/" target="_blank"><i class="fa fa-external-link"></i> jQuery</a></li>
+                                <li><a href="http://caseyscarborough.com/projects/github-activity/" target="_blank"><i class="fa fa-external-link"></i> GitHub Activity Stream</a></li>
+
+                                <li><a href="https://github.com/sdepold/jquery-rss" target="_blank"><i class="fa fa-external-link"></i> jQuery RSS</a></li>
+
+                            </ul>
+
+                            <hr/>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+            </div><!--//secondary-->
+        </div><!--//row-->
+    </div><!--//masonry-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">3rd Wave Media</a> for developers</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
+    <!-- github activity plugin -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
+
