@@ -42,11 +42,11 @@ body {
 
 .panel-header h2{
 	margin:0px;
-	font-size: 3vw;
+	/*font-size: 3vw;*/
 }
 
 .panel p {
-	font-size: 2vw;
+	/*font-size: 2vw;*/
 	margin: 10px;
 }
 
