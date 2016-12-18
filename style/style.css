@@ -9,6 +9,17 @@ body {
 	font-size: 6vw;
 }
 
+.page-header {
+	background-color: rgba(0,0,0,.2);
+	margin:0px;
+	margin-bottom: 30px;
+	padding:30px;
+}
+
+p {
+	font-size: 2.5vw;
+}
+
 #name-div {
 	/*background-image: url("../assets/images/main_background.jpg");*/
 	
@@ -42,12 +53,12 @@ body {
 
 .panel-header h2{
 	margin:0px;
-	/*font-size: 3vw;*/
+	font-size: 3.5vw;
 }
 
 .panel p {
-	/*font-size: 2vw;*/
-	margin: 10px;
+	font-size: 2.5vw;
+	margin: 30px;
 }
 
 a:hover {
