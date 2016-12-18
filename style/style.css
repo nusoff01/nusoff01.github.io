@@ -1,0 +1,62 @@
+h1, h2 {
+	/*text-align: center;*/
+}
+body {
+	margin: 30px;
+}
+
+.page-header h1 {
+	font-size: 6vw;
+}
+
+#name-div {
+	/*background-image: url("../assets/images/main_background.jpg");*/
+	
+	height:720px;
+}
+
+.panel {
+	border-radius: 0px;
+	padding: 0px;
+}
+
+.panel-header {
+	padding: 20px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	top:0px;
+	
+}
+
+#draft-maps .panel-header {
+	background-color: rgba(30, 200, 130, .5);
+}
+
+#d3-viz .panel-header {
+	background-color: rgba(200, 30, 130, .5);
+}
+
+#campaign-finance .panel-header {
+	background-color: rgba(130, 200, 30, .5);
+}
+
+.panel-header h2{
+	margin:0px;
+	font-size: 3vw;
+}
+
+.panel p {
+	font-size: 2vw;
+	margin: 10px;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+.panel-body {
+	/*margin: 0px;*/
+	padding: 0px;
+	margin-top: 0px;
+}
+
