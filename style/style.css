@@ -51,6 +51,12 @@ p {
 	background-color: rgba(130, 200, 30, .5);
 }
 
+#sat-heatmap .panel-header {
+	background-color: rgba(200, 130, 30, .5);
+}
+
+
+
 .panel-header h2{
 	margin:0px;
 	font-size: 3.5vw;
@@ -69,5 +75,9 @@ a:hover {
 	/*margin: 0px;*/
 	padding: 0px;
 	margin-top: 0px;
+}
+
+.top-desc p {
+	font-size: 20px;
 }
 
