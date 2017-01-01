@@ -57,7 +57,8 @@
               <div class="panel-body">
                 <div class="panel-header"><h2>NYC SAT Heatmap</h2></div>
                 <p>A heatmap of SAT scores mapped onto NYC. Data came from the DOE of NYC</p>
-                <img src="assets/images/nyc_sat_map.svg" width="100%" alt="sat_heat_map"/>
+                <div id="sat_heatmap"><p><a>show below</a></p></div>
+                
               </div>
             </div>
 
@@ -67,6 +68,15 @@
       crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+      $("#sat_heatmap").click(function() {
+        $("#sat_heatmap").html('<img src="assets/images/nyc_sat_map.png" width="100%" alt="sat_heat_map" id="sat_heatmap_pic" style="visibility:none;"/>')
+        // $("#toggle_heatmap").toggle();
+
+      })
+    </script>
+
     </body>
 
 </html>
