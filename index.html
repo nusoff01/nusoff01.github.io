@@ -30,11 +30,10 @@
             <div class="page-header">
               <h1><a href="https://github.com/nusoff01">Nick Usoff</a> <br/><small>Software Development + Viz</small></h1>
             </div>
-            <div class="top-desc">
-                <p>I've built a few cool things over the past few years, below you can find descriptions and links to each of them. Please also visit my <a href="https://github.com/nusoff01">github</a> for code samples</p>
-            </div>
+            <h2 class="subheader">My Work</h2>
             <hr/>
-            <div id="projects-wrap"><div id="projects">
+            <!-- <div id="projects-wrap"> -->
+            <div id="projects">
             <div class="panel panel-default" id="campaign-finance">
               <div class="panel-header" ><h2><a href="https://campaign-expenditures.firebaseapp.com">Campaign Finance</a></h2></div>
               <div class="panel-body">
@@ -101,7 +100,7 @@
               </div>
             </div>
           </div>
-          </div>
+          <!-- </div> -->
 
 
 
@@ -126,12 +125,23 @@
 
       $( ".panel" ).click(function() {
         console.log("clicked")
-        $(this).find(".panel-description").toggle( "fast", function() {
+        $(this).find(".panel-description").toggle( "slow", function() {
           // Animation complete.
+          
         });
       });
 
-      $("")
+      //set widths based on the size of the window
+      $(window).resize(function() {
+        setTimeout(resize_handler, 100)
+      });
+
+      function resize_handler () {
+
+        var offset = ($("#projects").width() % 280) / 2;
+        $("#projects").css("margin-left", offset + "px")
+      }
+      resize_handler();
 
     </script>
 
