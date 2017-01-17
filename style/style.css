@@ -27,8 +27,16 @@ p {
 }
 
 .panel {
-	border-radius: 0px;
+	/*border-radius: 0px;*/
+	/*border:none;*/
 	padding: 0px;
+	width:240px;
+	float:left;
+	margin-left:20px;
+	/*border-width: 1px;*/
+	/*border-color: white;*/
+	box-shadow: 4px 4px 2px #888888;
+	
 }
 
 .panel-header {
@@ -36,14 +44,59 @@ p {
 	padding-bottom: 5px;
 	padding-top: 5px;
 	top:0px;
+	background-color: black
 	
 }
 
-#draft-maps .panel-header {
-	background-color: rgba(30, 200, 130, .5);
+#campaign-finance .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_campaign_finance.png");
 }
 
-#d3-viz .panel-header {
+#field-goal .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_field_goal.png");
+}
+
+#ma-healthcare .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_ma_healthcare.png");
+}
+
+#ma-trains .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_ma_trains.png");
+}
+
+#nyc-commute .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_nyc_commute.png");
+}
+
+#two-point .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_two_point.png");
+}
+
+#voting .panel-body {
+	background-image: url("../assets/images/thumbnails/thumbnail_voting.png");
+}
+
+.panel-body p {
+	/*background-color: rgba(255,255,255,1);*/
+	color:black;
+}
+
+.panel-body {
+	background-position:50% 50%;  
+	background-size:cover;   
+	height:240px;
+}
+
+.panel-description {
+	background-color:rgba(255,255,255,.9);
+	display:none;
+	/*padding-bottom:3px;*/
+	/*padding-top:3px;*/
+	/*max-height: 220px;*/
+	/*height:100%;*/
+}
+
+/*#d3-viz .panel-header {
 	background-color: rgba(200, 30, 130, .5);
 }
 
@@ -53,18 +106,27 @@ p {
 
 #sat-heatmap .panel-header {
 	background-color: rgba(200, 130, 30, .5);
+}*/
+
+/*#projects-wrap {
+	text-align: center;
 }
 
+#projects {
+    text-align: left;
+            display: inline-block;
 
-
+}
+*/
 .panel-header h2{
 	margin:0px;
-	font-size: 3.5vw;
+	font-size: 18px;
 }
 
 .panel p {
-	font-size: 2.5vw;
-	margin: 30px;
+	font-size: 15px;
+	margin: 10px;
+	padding:5px;
 }
 
 a:hover {

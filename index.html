@@ -20,6 +20,8 @@
               ga('create', 'UA-42751938-2', 'auto');
               ga('send', 'pageview');
 
+
+
             </script>
 
     </head>
@@ -28,39 +30,85 @@
             <div class="page-header">
               <h1><a href="https://github.com/nusoff01">Nick Usoff</a> <br/><small>Software Development + Viz</small></h1>
             </div>
-            <div class="panel-body top-desc">
+            <div class="top-desc">
                 <p>I've built a few cool things over the past few years, below you can find descriptions and links to each of them. Please also visit my <a href="https://github.com/nusoff01">github</a> for code samples</p>
             </div>
             <hr/>
-            <div class="panel panel-default" id="draft-maps">
-              <div class="panel-body">
-                <div class="panel-header" ><h2><a href="https://draftmaps.com">Draft Maps</a></h2></div>
-                <p>Data from the MLB draft organized to show where teams draft players from, this visualization is meant to show the relative frequency of drafts from each state by each team </p>
-              </div>
-            </div>
-
+            <div id="projects-wrap"><div id="projects">
             <div class="panel panel-default" id="campaign-finance">
+              <div class="panel-header" ><h2><a href="https://campaign-expenditures.firebaseapp.com">Campaign Finance</a></h2></div>
               <div class="panel-body">
-                <div class="panel-header"><h2><a href="https://campaign-expenditures.firebaseapp.com/">Campaign Finance</a></h2></div>
-                <p>Visualizing the campaign expenditures of Katherine Clark, a congresswoman from Massachusetts who ran an unopposed election in 2016 </p>
+              <div class="panel-description">
+                  <p>A lot of money gets spent on elections in the United States - even on ones where incumbants run unopposed. This is a visualization of the spending of Katherine Clark, an incumbant running unopposed in 2016.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="panel panel-default" id="d3-viz">
+            <div class="panel panel-default" id="ma-healthcare">
+              <div class="panel-header" ><h2><a href="https://mass-healthcare.firebaseapp.com">MA Healthcare</a></h2></div>
               <div class="panel-body">
-                <div class="panel-header"><h2>D3 Viz</h2></div>
-                <p>Using d3 to visualize d3 - a visualization intended to get users acquainted with the d3 library. Built with two team members in my visualization class</p>
+                <div class="panel-description">
+                  <p>Where are all the healthcare facilities in Massachusetts? Are most of them concentrated around Boston? Does the Western part of the state have access to the facilities they need? This map hopes to answer these questions. </p>
+                </div>
               </div>
             </div>
 
-            <div class="panel panel-default" id="sat-heatmap">
+            <div class="panel panel-default" id="ma-trains">
+              <div class="panel-header" ><h2><a href="http://nickusoff.com/assets/images/mass_train_percents.png">MA Train Riders</a></h2></div>
               <div class="panel-body">
-                <div class="panel-header"><h2>NYC SAT Heatmap</h2></div>
-                <p>A heatmap of SAT scores mapped onto NYC. Data came from the DOE of NYC</p>
-                <div id="sat_heatmap"><p><a>show below</a></p></div>
-                
+              
+                <div class="panel-description">
+                  <p>I grew up within a few miles of a commuter rail station in Massachusetts, and I still had trouble using it as a commuting method to Boston. This map shows that a lot of people have the same trouble I have.</p>
+                </div>
               </div>
             </div>
+
+
+            <div class="panel panel-default" id="nyc-commute">
+              <div class="panel-header" ><h2><a href="http://nickusoff.com/assets/images/commute_viridis.png">NYC Commute Times</a></h2></div>
+              <div class="panel-body">
+                <div class="panel-description">
+                  <p>NYC is huge, and a lot of times people can't afford to live close to where they work in the city. This map serves to show that people who live in certain areas in the city often times have extremely long commutes to work.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default" id="two-point">
+              <div class="panel-header" ><h2><a href="http://nickusoff.com/two_point_rates.html">Two Point Conversions</a></h2></div>
+              <div class="panel-body">
+              <div class="panel-description">
+                  <p>In 2015 the NFL switched the yard line for a kicked extra point from the 2 to the 15. Since the number of attempted two point conversions soared, I wanted to put that rate into historical context </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default" id="field-goal">
+              <div class="panel-header" ><h2><a href="http://nickusoff.com/field_goals.html">Field Goals</a></h2></div>
+              <div class="panel-body">
+              <div class="panel-description">
+                  <p>Kickers in the NFL have seemed automatic in the 2017 playoffs - this graph serves to put their success in some context, since kickers have improved drastically in the past 40 years. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default" id="voting">
+            <div class="panel-header" ><h2><a href="https://voting-demographics.firebaseapp.com">MA Voters</a></h2></div>
+              <div class="panel-body">
+                <div class="panel-description">
+                  <p>The 2016 presidential election brought out a lot of talk about the demographics of voters as a deciding factor for places to split for Trump or Clinton. This tool attempts to allow you to make your own judegements for which demographic variables split voters.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -75,6 +123,16 @@
         // $("#toggle_heatmap").toggle();
 
       })
+
+      $( ".panel" ).click(function() {
+        console.log("clicked")
+        $(this).find(".panel-description").toggle( "fast", function() {
+          // Animation complete.
+        });
+      });
+
+      $("")
+
     </script>
 
     </body>
