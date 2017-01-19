@@ -1,0 +1,61 @@
+
+h1,h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	margin: 0 auto;
+}
+
+
+h1 {
+	font-size: 5em;
+	font-weight: 800;
+}
+
+h2 {
+	font-family: 'Gentium Basic', serif;
+	font-weight: 400;
+}
+
+p {
+	font-family: 'Gentium Basic', serif;
+	font-size: 18px;
+}
+
+.intro {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+.me, .pic {
+	margin: 50px;
+	width: 40%;
+	height: auto;
+}
+
+.me {
+
+}
+
+.pic {
+	width: 35%;
+}
+
+.me {
+	text-align: justify;
+}
+
+/*.pic {
+	display: block;
+	width: 50%;
+	height: 50%;
+	background-image: url(../assets/nick.JPG);
+	background-size: contain;
+	background-repeat: no-repeat;
+}*/
