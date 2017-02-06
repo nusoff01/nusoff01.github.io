@@ -2,149 +2,73 @@
     <head>
         <title>Nick Usoff Portfolio</title>
 
-        <!-- bootstap -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Raleway" rel="stylesheet">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="style/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-          <script>
-              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-              ga('create', 'UA-42751938-2', 'auto');
-              ga('send', 'pageview');
-
-
-
-            </script>
-
+            ga('create', 'UA-42751938-2', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
 
     <body>
-            <div class="page-header">
-              <h1><a href="https://github.com/nusoff01">Nick Usoff</a> <br/><small>Software Development + Viz</small></h1>
-            </div>
-            <h2 class="subheader">My Work</h2>
+        <div class="page-header">
+            <h1><a href="https://github.com/nusoff01">Nick Usoff</a></h1>
+            <h2>Software Development + Viz</h2>
             <hr/>
-            <!-- <div id="projects-wrap"> -->
-            <div id="projects">
-            <div class="panel panel-default" id="campaign-finance">
-              <div class="panel-header" ><h2><a href="https://campaign-expenditures.firebaseapp.com">Campaign Finance</a></h2></div>
-              <div class="panel-body">
-              <div class="panel-description">
-                  <p>A lot of money gets spent on elections in the United States - even on ones where incumbants run unopposed. This is a visualization of the spending of Katherine Clark, an incumbant running unopposed in 2016.
-                  </p>
+            <p>The work of Nick Usoff (<a href="https://twitter.com/heyusoft">@heyusoft</a>)</p>
+        </div>
+        <div class="container">
+            <div class="project-card row">
+                <div class="project-card-icon">
+                    <a href="https://death-in-america.firebaseapp.com">
+                        <img src="assets/images/thumbnails/400_300_death_in_america.png" alt="Death in America Visual">
+                    </a>
                 </div>
-              </div>
+                <div class="project-card-description">
+                    <h2><a href="https://death-in-america.firebaseapp.com">Death in America</a></h2>
+                    <p>Interactive map of mortality rates for select causes of deaths across a 15 year period.</p>
+                </div>
             </div>
 
-            <div class="panel panel-default" id="ma-healthcare">
-              <div class="panel-header" ><h2><a href="https://mass-healthcare.firebaseapp.com">MA Healthcare</a></h2></div>
-              <div class="panel-body">
-                <div class="panel-description">
-                  <p>Where are all the healthcare facilities in Massachusetts? Are most of them concentrated around Boston? Does the Western part of the state have access to the facilities they need? This map hopes to answer these questions. </p>
+            <div class="project-card row">
+                <div class="project-card-icon">
+                    <a href="https://mass-schools.firebaseapp.com">
+                        <img src="assets/images/thumbnails/400_300_MA_schools.png" alt="Massachusetts School Visual">
+                    </a>
                 </div>
-              </div>
+                <div class="project-card-description">
+                    <h2><a href="https://mass-schools.firebaseapp.com">SAT scores in MA</a></h2>
+                    <p>Explore different Demographic Factors that contribute to the SAT success of a MA school district.</p>
+                </div>
             </div>
 
-            <div class="panel panel-default" id="ma-trains">
-              <div class="panel-header" ><h2><a href="http://nickusoff.com/assets/images/mass_train_percents.png">MA Train Riders</a></h2></div>
-              <div class="panel-body">
-              
-                <div class="panel-description">
-                  <p>I grew up within a few miles of a commuter rail station in Massachusetts, and I still had trouble using it as a commuting method to Boston. This map shows that a lot of people have the same trouble I have.</p>
+            <div class="project-card row">
+                <div class="project-card-icon">
+                    <img src="assets/images/thumbnails/400_300_MA_voting.png" alt="Massachusetts Voting Visual">
                 </div>
-              </div>
-            </div>
-
-
-            <div class="panel panel-default" id="nyc-commute">
-              <div class="panel-header" ><h2><a href="http://nickusoff.com/assets/images/commute_viridis.png">NYC Commute Times</a></h2></div>
-              <div class="panel-body">
-                <div class="panel-description">
-                  <p>NYC is huge, and a lot of times people can't afford to live close to where they work in the city. This map serves to show that people who live in certain areas in the city often times have extremely long commutes to work.</p>
+                <div class="project-card-description">
+                    <h2>2016 Presidential Election in MA</h2>
+                    <p>Demographics of voters had a huge presence in the media coverage of 2016. Check out how MA towns split by demographic variable. </p>
                 </div>
-              </div>
             </div>
-
-            <div class="panel panel-default" id="two-point">
-              <div class="panel-header" ><h2><a href="http://nickusoff.com/two_point_rates.html">Two Point Conversions</a></h2></div>
-              <div class="panel-body">
-              <div class="panel-description">
-                  <p>In 2015 the NFL switched the yard line for a kicked extra point from the 2 to the 15. Since the number of attempted two point conversions soared, I wanted to put that rate into historical context </p>
+            <div class="project-card row">
+                <div class="project-card-icon">
+                    <img src="assets/images/thumbnails/400_300_nyc_commute.png" alt="NYC Commute Map Visual">
                 </div>
-              </div>
+                <div class="project-card-description">
+                    <h2>NYC Commute Map</h2>
+                    <p>If you live in New York and you're commute sucks now you can point to data to show how much it really does.
+                    </p>
             </div>
-
-            <div class="panel panel-default" id="field-goal">
-              <div class="panel-header" ><h2><a href="http://nickusoff.com/field_goals.html">Field Goals</a></h2></div>
-              <div class="panel-body">
-              <div class="panel-description">
-                  <p>Kickers in the NFL have seemed automatic in the 2017 playoffs - this graph serves to put their success in some context, since kickers have improved drastically in the past 40 years. </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel panel-default" id="voting">
-            <div class="panel-header" ><h2><a href="https://voting-demographics.firebaseapp.com">MA Voters</a></h2></div>
-              <div class="panel-body">
-                <div class="panel-description">
-                  <p>The 2016 presidential election brought out a lot of talk about the demographics of voters as a deciding factor for places to split for Trump or Clinton. This tool attempts to allow you to make your own judegements for which demographic variables split voters.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script>
-      $("#sat_heatmap").click(function() {
-        $("#sat_heatmap").html('<img src="assets/images/nyc_sat_map.png" width="100%" alt="sat_heat_map" id="sat_heatmap_pic" style="visibility:none;"/>')
-        // $("#toggle_heatmap").toggle();
-
-      })
-
-      $( ".panel" ).click(function() {
-        console.log("clicked")
-        $(this).find(".panel-description").toggle( "slow", function() {
-          // Animation complete.
-          
-        });
-      });
-
-      //set widths based on the size of the window
-      $(window).resize(function() {
-        setTimeout(resize_handler, 100)
-      });
-
-      function resize_handler () {
-
-        var offset = ($("#projects").width() % 280) / 2;
-        $("#projects").css("margin-left", offset + "px")
-      }
-      resize_handler();
-
-    </script>
-
+        </div>
     </body>
 
 </html>
