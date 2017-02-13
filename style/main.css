@@ -149,8 +149,7 @@ h1#latest, h1#me {
 -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
 
-
-@media (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
 
 	body{
 		width: 100%;
@@ -177,10 +176,6 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
 		-webkit-flex-direction: row;
 		flex-direction: row;
 	}
-
-
-
->>>>>>> c89ad6b21b482663dae1943c7e9f26d9349c6df7
 }
 
 
