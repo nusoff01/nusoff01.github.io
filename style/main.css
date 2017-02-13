@@ -1,3 +1,7 @@
+body {
+	max-width: 1300px;
+	margin: 0 auto;
+}
 
 h1,h2 {
 	font-family: 'Open Sans', sans-serif;
@@ -7,23 +11,27 @@ h1,h2 {
 
 
 h1 {
-	font-size: 5em;
+	font-size: 2em;
 	font-weight: 800;
+	text-align: left;
 }
 
 h2 {
 	font-family: 'Gentium Basic', serif;
 	font-weight: 400;
+	color: rgba(66, 9, 104, 0.63);
 }
 
 p {
 	font-family: 'Gentium Basic', serif;
-	font-size: 18px;
+	font-size: 1.2em;
 }
 
-.intro {
+section {
    display: -webkit-flex;
    display: flex;
+   flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
    -webkit-flex-direction: row;
    flex-direction: row;
    -webkit-align-items: center;
@@ -33,29 +41,144 @@ p {
    height: 100vh;
 }
 
-.me, .pic {
-	margin: 50px;
-	width: 40%;
-	height: auto;
+.reverse {
+	-webkit-flex-direction: row-reverse;
+	flex-direction: row-reverse;
 }
 
-.me {
+.text, .pic {
+	margin: 3rem;
+	width: 40%;
+	height: auto;
+	flex: 1 1 0;
+	min-width: 400px;
+}
 
+h1#latest, h1#me {
+	font-size: 3em;
 }
 
 .pic {
-	width: 35%;
+	margin-left: 1rem;
+	max-width: 40rem;
 }
 
-.me {
+.text {
+	margin-right: 1rem;
 	text-align: justify;
 }
 
-/*.pic {
-	display: block;
-	width: 50%;
-	height: 50%;
-	background-image: url(../assets/nick.JPG);
-	background-size: contain;
-	background-repeat: no-repeat;
-}*/
+.intro .fa {
+	margin-right: 1rem;
+	color: rgba(66, 9, 104, 1);
+	cursor: pointer;
+	    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.intro .fa:hover {
+	color: rgba(66, 9, 104, .43);
+
+}
+
+.werk {
+	background:
+		linear-gradient(
+	      rgba(66, 9, 104, 0.63), 
+	      rgba(0, 0, 0, 0)
+	    ),
+		url('../assets/images/bigcat.JPG');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: middle;
+	color: white;
+	height: 50vh;
+}
+
+.project {
+	height: 70vh;
+	margin: 2rem;
+	border-bottom: solid 1px rgba(66, 9, 104, 0.5);
+}
+
+.project h1 {
+	padding-bottom: .5rem;
+	border-bottom: solid 2px rgba(66, 9, 104, 0.63);
+	text-align: center;
+}
+
+.project p {
+	/*font-size: 1.5em;*/
+	text-align: center;
+}
+
+.project #pres {
+	font-size: 1.8em;
+}
+
+.button {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    padding: 10px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border: solid 3px rgba(66, 9, 104, 1);
+    letter-spacing: 1px;
+    font-weight: 700;
+    width: 4rem;
+    margin: 3rem auto;
+    display: block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.button:hover {
+	background-color: rgba(66, 9, 104, 1);
+	color: white;
+}
+
+
+.project img {
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
+
+@media (max-width: 600px) {
+
+	body{
+		width: 100%;
+	}
+
+	h2 {
+		text-align: left;
+	}
+
+	#moi {
+		display: none;
+	}
+
+	.text, .pic {
+		margin: 1rem;
+		min-width: 300px;
+	}
+
+	.project {
+		height: auto;
+	}
+
+	.reverse {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	}
+
+
+
+}
+
+

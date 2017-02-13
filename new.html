@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="Nick Usoff, Software Engineering & Data Visualizations">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0," />
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -13,7 +13,12 @@
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/main.css">
         <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,700|Open+Sans" rel="stylesheet">
-        <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <script src="assets/js/wow.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+        <script src="https://use.fontawesome.com/b5e7470b34.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -21,20 +26,54 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="intro">
-            <div class="me">
-                <h1>Nick Usoff</h1>
-                <h2>Software engineer & data visualization junkie.</h2>
-                <p>I'm an engineer, writer, and reader in New York who is interested in human performance, cognitive science, and cycling. </p>
-                <p> Currrently, I work as a software engineer at Peloton. Previously, I was on the Core team at Tumblr and helped build Imgur's API and iOS app. Before that, I studied Mathematics and Computer Science at the University of Virginia. </p>
-                <p>Check out some of my projects below!</p>
+        <section class="intro">
+            <div class="text">
+                <h1 id="me">Nick Usoff</h1>
+                <h2>d3.js storyteller & software engineer</h2>
+                <p>I'm an engineer, athlete, and student based in Boston who is interested in data journalism, Gary Johnson, and throwing javelin. Lately, I've been visualizing all kinds of trends using d3.js , and have been featured on reddit's homepage frequently.</p>
+                <p> Currrently, I work as a software engineer at Upstream. Previously, I spent some time at DirectAthletics and helped build software for Qleek. I study Computer Science at Tufts Unversity, and I'm actively looking for oppurtunities to use my powers for good.</p>
+                <p><i class="fa fa-twitter" aria-hidden="true"></i>  <i class="fa fa-reddit-alien" aria-hidden="true"></i>  <i class="fa fa-linkedin-square" aria-hidden="true"></i>  <i class="fa fa-envelope" aria-hidden="true"></i>  </p>
             </div>
-            <img class="pic" src="assets/nick.JPG">
-        </div>
+            <img class="pic" id="moi" src="assets/nick.JPG">
+        </section>
 
-        <div class="myStuff">
-            
-        </div>
+        <section class="werk">
+            <h1 id="latest" class="wow fadeInDown" data-wow-delay="0.5s">Latest Projects</h1>
+        </section>
+        <section class="project reverse">
+            <img class="pic wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"  src="http://nickusoff.com/assets/images/thumbnails/400_300_death_in_america.png">
+            <div class="text">
+                <h1 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Death in America</h1>
+                <p class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Interactive map of mortality rates for select causes of deaths across a 15 year period.</p>
+                <a href="https://death-in-america.firebaseapp.com/" class="button">Link <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </section>
+        <section class="project">
+            <img class="pic wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" src="http://nickusoff.com/assets/images/thumbnails/400_300_MA_schools.png">
+            <div class="text">
+                <h1 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">SAT Scores in MA</h1>
+                <p class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Explore different Demographic Factors that contribute to the SAT success of a MA school district.</p>
+                <a href="https://mass-schools.firebaseapp.com/" class="button">Link <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </section>
+
+        <section class="project reverse">
+            <img class="pic wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" src="http://nickusoff.com/assets/images/thumbnails/400_300_MA_voting.png">
+            <div class="text">
+                <h1 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"id="pres">2016 Presidential Election in MA</h1>
+                <p class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Demographics of voters had a huge presence in the media coverage of 2016. Check out how MA towns split by demographic variable.</p>
+                <a href="https://voting-demographics.firebaseapp.com/" class="button">Link <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </section>
+
+        <section class="project">
+            <img class="pic wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" src="http://nickusoff.com/assets/images/thumbnails/400_300_nyc_commute.png">
+            <div class="text">
+                <h1 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">NYC Commute Map</h1>
+                <p class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">If you live in New York and you're commute sucks now you can point to data to show how much it really does.</p>
+                <a href="http://nickusoff.com/assets/images/commute_viridis.png" class="button">Link <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </section>
 
 
 
