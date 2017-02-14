@@ -39,6 +39,7 @@ section {
    -webkit-justify-content: center;
    justify-content: center;
    height: 100vh;
+
 }
 
 .reverse {
@@ -52,6 +53,9 @@ section {
 	height: auto;
 	flex: 1 1 0;
 	min-width: 400px;
+	flex-basis: 300px;
+
+	
 }
 
 h1#latest, h1#me {
@@ -149,7 +153,13 @@ h1#latest, h1#me {
 -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
 
-@media (max-width: 600px) {
+@media all and (max-width:600) {
+	.text, .pic {
+		width:100%;
+	}
+}
+
+@media all and (max-width: 1000px) {
 
 	body{
 		width: 100%;
