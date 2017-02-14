@@ -164,7 +164,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
 	}
 
 	.text, .pic {
-		margin: 1rem;
+		margin: 10px;
 		min-width: 300px;
 	}
 
