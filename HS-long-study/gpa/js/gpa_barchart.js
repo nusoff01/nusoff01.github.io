@@ -179,7 +179,7 @@ function createBarLabels(svg, gpaArray) {
 
 createTitle(chart);
 createQuintileSelectors(chart);
-d3.json("/gpa/data/gpa.json", function(data){
+d3.json("gpa/data/gpa.json", function(data){
     var gpaArray = [];
     for (var gpa in data){
         if( Number(gpa) > 0 && Number(gpa) < 5)
