@@ -27,6 +27,24 @@ p {
 	font-size: 1.2em;
 }
 
+a { 
+	text-decoration: none;
+    color: #8864a0; 
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a:hover {
+	color: white;
+	background-color: rgba(66, 9, 104, 0.25);
+	cursor: pointer;
+}
+
+.icon:hover {
+	background-color: transparent;
+}
+
 section {
    display: -webkit-flex;
    display: flex;
@@ -135,7 +153,7 @@ h1#latest, h1#me {
     border: solid 3px rgba(66, 9, 104, 1);
     letter-spacing: 1px;
     font-weight: 700;
-    width: 4rem;
+    width: 5rem;
     margin: 3rem auto;
     display: block;
     -webkit-transition: all 0.3s;
