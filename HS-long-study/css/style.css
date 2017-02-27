@@ -1,0 +1,180 @@
+body,html {
+	width:100%;
+	margin:0px;
+}
+
+svg {
+	margin:20px;
+	/*border:2px solid black;*/
+	/*background-color:rgb(215,215,215);*/
+}
+
+#bipartide-socioeconomic-classes {
+	height: 100vh;
+	width:100%;
+}
+
+
+#bar-chart {
+	height: 100vh;
+	/*max-height:600px;*/
+}
+
+section {
+	background-color:rgb(220,220,220);
+   display: -webkit-flex;
+   display: flex;
+   flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   height: 100vh;
+
+}
+
+.text, .pic {
+	margin: 3rem;
+	width: 40%;
+	height: auto;
+	flex: 1 1 0;
+
+	min-width: 300px;
+	flex-basis: 300px;
+}
+
+h1#latest, h1#me {
+	font-size: 3em;
+	text-align: center
+}
+
+
+.pic {
+	margin-left: 1rem;
+	max-width: 40rem;
+}
+
+p {
+	font-family: "Raleway";
+	padding:30px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+@media all and (max-width: 600px) {
+	 p {
+	 	padding:10px;
+	 }
+
+	 h1#me {
+	 	font-size: 24px;
+	 }
+}
+
+@media all and (max-width: 1000px) {
+
+	body{
+		width: 100%;
+	}
+
+
+	#moi {
+		display:none;
+	}
+
+	.text {
+		width:100%;
+	}
+}
+
+
+
+
+
+
+.content, .bar-chart {
+	max-width:1000px;
+	/*background-color:rgb(220,220,220);*/
+	padding:10px;
+	margin:0 auto;
+	margin-bottom:30px;
+}
+
+.article-body {
+	margin:0 auto;
+	max-width:1000px;
+}
+
+.article-header {
+	/*background-color: black;*/
+	margin:0px;
+	margin-top:0px;
+	padding:20px;
+}
+.article-body {
+	padding:10px;
+}
+
+.article-header h1, .article-header h4{
+	/*color:white;*/
+	font-weight:normal;
+	text-align:center;
+}
+
+.article-header h1 {
+	font-size: 3em;
+}
+
+h1,h2,h3,h4 {
+	font-family: "Merriweather";
+	color:black;
+}
+
+
+.chart {
+	display: block;
+	margin:0 auto;
+}
+
+
+text {
+	font-family: "Merriweather";
+}
+
+.header-text {
+	font-style:italic;
+	letter-spacing: -1px;
+	/*font-family: "Raleway";*/
+}
+
+#selection-text {
+	/*font-size: 15px;*/
+	font-family: "Raleway";
+}
+
+.selected-quintile {
+	fill: black;
+	font-weight: bold;
+}
+
+.not-selected-quintile {
+	fill: grey;
+	font-weight: lighter;
+}
+
+.title-text {
+	font-family: "Raleway";
+	font-size:24px;
+}
+
+.gpa-val-text {
+ 	font-family: "Raleway";
+}
+
+.barLabel {
+	font-weight: 200;
+	fill:white;
+}

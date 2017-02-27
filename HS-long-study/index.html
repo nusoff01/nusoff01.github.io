@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>School Performance</title>
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Merriweather" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      </head>
+      <body>
+        <!-- <div class="article-header">
+          <h1>Factors in High School Outcomes</h1>
+          <img src="images/bipartide.png" height="500">
+          <h4>Nick Usoff (@heyusoft)</h4>
+        </div> -->
+
+        <section class="intro">
+            <div class="text">
+                <h1 id="me">Factors in High School Outcomes</h1>
+                <p> Conventional wisdom tells us that there are certain indicators that determine whether a student will thrive or struggle in high school. This is an attempt to show the impact of socio-economic status on student success, using the outcome indicators of final GPA (weighted) and whether the student attended post-secondary classes the fall after their expected graduation date.</p>
+                <p>February 22 2017 <br/>
+                   Nick Usoff (@heyusoft)
+                </p>
+            </div>
+            <img class="pic" id="moi" src="images/bipartide.png">
+        </section>
+        <div class="article-body">
+          <h1>
+            To what extent does Socio-Economic Status impact outcomes?
+          </h1>
+          <h3>The Data</h3>
+          <p>All data comes from the 2009 High School Longitudinal Study. The socio-economic status variable was present in the first collection of data (from Fall 2009). Socioeconomic status is a factor of parents educational level and income.</p>
+          <p>In all of these variables, nonresponse bias could be a huge issue. Non-response rates are over 20% for socio-economic status and post-secondary attendance, and about 7% for GPA. Self-reported numbers for socio-economic status could also be an issue. </p>
+          <h3>Impact on GPA</h3>
+          <p>The most startling difference between socio-economic groups evident in the following visualization is the GPA mode - for the lowest group, the mode is a measly 2.0, whereas for the highest group the mode is 3.5, and the second most frequent GPA is 4.0. Tabbing through each group will show a steady shift upward in GPA between each socio-economic group. </p>
+          <p> Another interesting note is that through 20,000+ study participants, not a single student in the bottom 80% socio-economically had the highest attainable weighted GPA of 4.75. </p>
+          <div id='bar-chart'></div>
+          <h3>Impact on Post-Secondary Attendance</h3>
+          <p>
+            The second indicator of success looks at whether a student ended up taking post-secondary classes the fall after their expected graduation date. The survey question associated with this data is whether the participant is "Taking classes from a college, university, community college, trade school, or other occupational school (such as a cosmetology school or a school of culinary arts)"
+          </p>
+          <p>
+            Most immediately notable here is the 93.4% rate of attendance for the highest quintile. Post-secondary education appears to be the default option for this group.
+          </p>
+
+          <div id='bipartide-socioeconomic-classes'>
+        </div>
+
+        <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bipartide_quintiles/js/bipartide_graph.js"></script>
+        <script type="text/javascript" src="bipartide_quintiles/js/bp_socioeconomic_classes.js"></script>
+
+        <script type="text/javascript" src="gpa/js/gpa_barchart.js"></script>
+        <!-- <script type="text/javascript" src="js/bp_socioeconomic_math.js"></script> -->
+      </body>
+    </html>
