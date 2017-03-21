@@ -642,6 +642,11 @@ class BipartideGraph {
                 d.barSetName = barSetName;
                 this.barOnMouseOver(d, this);
             })
+            .on("click",(d) => {
+                this.setSelectionText(barSetName, d);
+                d.barSetName = barSetName;
+                this.barOnMouseOver(d, this);
+            })
             .on("mouseleave", (d) => {
                 d.barSetName = barSetName;
                 this.barOnMouseout(d, this)
