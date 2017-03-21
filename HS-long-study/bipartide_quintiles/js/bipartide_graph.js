@@ -29,6 +29,8 @@ class BipartideGraph {
         this.bBars = this.createBBars();
         this.links = this.createLinks();
 
+        var ctx = this;
+
         this.drawLabels();
         this.drawCategoryHeader();
         this.updateLinkPaths();
@@ -42,7 +44,6 @@ class BipartideGraph {
                                 .attr("font-size", this.selectionFontSize())
                                 .text("mouseover a bar to expand details about the data")
 
-        var ctx = this;
         window.addEventListener("resize", () => {this.redraw(ctx)});
     }
 
@@ -649,6 +650,7 @@ class BipartideGraph {
                 this.barOnMouseOver(d, this);
             })
             .on("mouseleave", (d) => {
+                alert("mouse leave")
                 d.barSetName = barSetName;
                 this.barOnMouseout(d, this)
             })
