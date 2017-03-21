@@ -31,6 +31,13 @@ class BipartideGraph {
 
         var ctx = this;
 
+        this.svg.on("click", function(d) {
+            console.log(d3.event.srcElement.tagName);
+            if(d3.event.srcElement.tagName != "rect"){
+                ctx.barOnMouseout({}, ctx);
+            }
+        })
+
         this.drawLabels();
         this.drawCategoryHeader();
         this.updateLinkPaths();
@@ -637,23 +644,24 @@ class BipartideGraph {
                 return this.aColors[d.varA];
             })
             .attr("stroke", "white")
-            // .style("border-color", "white")
-            .on("mouseover",(d) => {
-                this.setSelectionText(barSetName, d);
-                d.barSetName = barSetName;
-                this.barOnMouseOver(d, this);
-            })
+            .style("border-color", "white")
+            // .on("mouseover",(d) => {
+            //     this.setSelectionText(barSetName, d);
+            //     d.barSetName = barSetName;
+            //     this.barOnMouseOver(d, this);
+            // })
             .on("click",(d) => {
+                console.log(d);
                 this.setSelectionText(barSetName, d);
                 d.barSetName = barSetName;
                 this.barOnMouseout(d, this)
                 this.barOnMouseOver(d, this);
             })
-            .on("mouseleave", (d) => {
-                alert("mouse leave")
-                d.barSetName = barSetName;
-                this.barOnMouseout(d, this)
-            })
+            // .on("mouseleave", (d) => {
+            //     console.log(d);
+            //     d.barSetName = barSetName;
+            //     this.barOnMouseout(d, this)
+            // })
     }
 
     cubicBezier (pt1, pt2) {
