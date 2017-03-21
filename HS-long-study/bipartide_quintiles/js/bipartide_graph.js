@@ -10,6 +10,8 @@ class BipartideGraph {
         this.BARNOTHOVEROPACITY = .5;
         this.BARNORMALOPACITY = .85;
 
+        this.STARTTEXT = "click on a bar to expand details about the data"
+
         this.formatSelectedString = stringFormatters.selectedString;
         this.formatVarVal = stringFormatters.varValue;
 
@@ -31,12 +33,7 @@ class BipartideGraph {
 
         var ctx = this;
 
-        this.svg.on("click", function(d) {
-            console.log(d3.event.srcElement.tagName);
-            if(d3.event.srcElement.tagName != "rect"){
-                ctx.barOnMouseout({}, ctx);
-            }
-        })
+      
 
         this.drawLabels();
         this.drawCategoryHeader();
@@ -49,7 +46,15 @@ class BipartideGraph {
                                 .style("font-weight", "lighter")
                                 .attr("id", "selection-text")
                                 .attr("font-size", this.selectionFontSize())
-                                .text("mouseover a bar to expand details about the data")
+                                .text(this.STARTTEXT)
+
+          this.svg.on("click", function(d) {
+            console.log(d3.event.srcElement.tagName);
+            if(d3.event.srcElement.tagName != "rect"){
+                ctx.barOnMouseout({}, ctx);
+                ctx.selectionText.text(ctx.STARTTEXT);
+            }
+        })
 
         window.addEventListener("resize", () => {this.redraw(ctx)});
     }
@@ -417,13 +422,13 @@ class BipartideGraph {
             .style("fill-opacity", (d) => {
                 return this.selectedBarFillOpacity(barSetName, varA, varB, ctx, d);
             })
-            .attr("pointer-events", (d) => {
-                if(this.isSelectedLabel(barSetName, varA, varB, d)){
-                    return "all"  
-                } else {
-                    return "none"
-                }
-            })
+            // .attr("pointer-events", (d) => {
+            //     if(this.isSelectedLabel(barSetName, varA, varB, d)){
+            //         return "all"  
+            //     } else {
+            //         return "none"
+            //     }
+            // })
         d3.selectAll(".link")
             .style("fill-opacity", (d) => {
                 return this.selectedLinkFillOpacity(barSetName, varA, varB, ctx, d);
