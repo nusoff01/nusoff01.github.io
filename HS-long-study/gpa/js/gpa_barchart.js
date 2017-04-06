@@ -25,6 +25,14 @@ function redraw(){
                 return Math.min(chart.attr("width") / 30, 28)
             });
 
+    chart.selectAll(".instructionText")
+    .transition().duration(500)
+            .attr("x", width / 2)
+            .attr("y", height - 5)
+            .attr("font-size", function(d){
+                return Math.min(chart.attr("width") / 50, 12)
+            });
+
     chart.selectAll(".quints")
     .transition().duration(500)
             .attr("x", function(d, i) {
@@ -131,6 +139,12 @@ function createTitle(svg) {
         .attr("class", "titleText")
         .attr("text-anchor", "middle")
         .text("Weighted GPA Distribution by Socio-Economic Quintile")
+
+    svg.append("text").text("(Select a socio-economic quintile to see its weighted GPA distribution)")
+        .attr("class", "instructionText")
+        .attr("text-anchor", "middle")
+        .attr("fill", "grey")
+        .attr("y", 60)
 }
 
 function createQuintileSelectors(svg) {
