@@ -21,7 +21,7 @@ svg {
 }
 
 section {
-	background-color:rgb(220,220,220);
+	/*background-color:rgb(220,220,220);*/
    display: -webkit-flex;
    display: flex;
    flex-wrap: wrap;
@@ -62,6 +62,8 @@ p {
 	padding:30px;
 	padding-top:15px;
 	padding-bottom:15px;
+	max-width:700px;
+	margin:0 auto;
 }
 
 @media all and (max-width: 600px) {
@@ -93,15 +95,23 @@ p {
 
 
 
+hr {
+	margin-bottom:20px;
+}
 
-
-.content, .bar-chart {
+.content, #bar-chart {
 	max-width:1000px;
 	/*background-color:rgb(220,220,220);*/
 	padding:10px;
 	margin:0 auto;
 	margin-bottom:30px;
+	margin-top:45px;
 }
+
+ #bipartide-socioeconomic-classes {
+ 	margin-bottom:30px;
+	margin-top:45px;
+ }
 
 .article-body {
 	margin:0 auto;
