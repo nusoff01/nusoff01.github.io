@@ -1,0 +1,277 @@
+.chart-scatterPlotControls {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 224px;
+  border-left: 1px solid grey;
+  padding: 8px; }
+  .chart-scatterPlotControls .chart-filterSection {
+    margin: 4px; }
+  .chart-scatterPlotControls .chart-legendSectionHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline; }
+  .chart-scatterPlotControls .chart-button {
+    border: 1px solid grey;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 24px; }
+  .chart-scatterPlotControls .chart-select {
+    height: 24px; }
+  .chart-scatterPlotControls .chart-filterLabel {
+    display: block; }
+.chart-scatterPlot {
+  position: relative; }
+  .chart-scatterPlot .chart-legendPanel {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: inline-flex;
+    display: flex;
+    align-items: center; }
+  .chart-scatterPlot .chart-contentBox {
+    position: absolute;
+    top: 10px;
+    left: 100px; }
+  .chart-scatterPlot .chart-scatterPlotSVG .guideLine {
+    stroke: grey;
+    stroke-width: 1px; }
+  .chart-scatterPlot .chart-axisLabel {
+    text-anchor: middle;
+    font-weight: bold;
+    text-decoration: underline; }
+.chart-heatmap {
+  flex-direction: column;
+  font-family: 'Inconsolata', monospace; }
+  .chart-heatmap .chart-axis {
+    font-family: 'Inconsolata', monospace;
+    font-weight: lighter;
+    font-size: 13px; }
+    .chart-heatmap .chart-axis path, .chart-heatmap .chart-axis line {
+      stroke: none; }
+  .chart-heatmap .chart-closingLabels {
+    font-size: 12px;
+    font-family: 'Inconsolata', monospace;
+    text-anchor: start; }
+  .chart-heatmap .chart-heatmapColorScaleContainer {
+    margin-top: 12px;
+    height: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid grey; }
+    .chart-heatmap .chart-heatmapColorScaleContainer .chart-legendTitle {
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Raleway';
+      text-align: center;
+      margin-bottom: 8px;
+      text-transform: capitalize; }
+    .chart-heatmap .chart-heatmapColorScaleContainer .chart-colorScaleBlock {
+      stroke: lightgrey; }
+    .chart-heatmap .chart-heatmapColorScaleContainer .chart-colorScaleLabel {
+      font-family: 'Inconsolata', monospace;
+      font-size: 12px; }
+      .chart-heatmap .chart-heatmapColorScaleContainer .chart-colorScaleLabel.chart-colorScaleSpecialModifier {
+        font-size: 12px; }
+.chart-heatmapLegend {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding: 12px;
+  display: flex;
+  flex-flow: column; }
+  .chart-heatmapLegend .chart-titleText {
+    font-size: 36px; }
+  .chart-heatmapLegend .chart-headerText {
+    font-size: 20px;
+    font-weight: bold; }
+  .chart-heatmapLegend .chart-titleText, .chart-heatmapLegend .chart-headerText {
+    font-family: 'Raleway', sans-serif; }
+  .chart-heatmapLegend .chart-contentText {
+    font-weight: 14px;
+    font-family: 'Merriweather', serif; }
+  .chart-heatmapLegend .chart-subtitle {
+    margin-top: 12px;
+    padding: 12px;
+    line-height: 1.6em; }
+    .chart-heatmapLegend .chart-subtitle .chart-heatmapLabel {
+      background-color: #ff6464; }
+    .chart-heatmapLegend .chart-subtitle .chart-linechartLabel {
+      background-color: #6464ff; }
+    .chart-heatmapLegend .chart-subtitle .chart-heatmapLabel, .chart-heatmapLegend .chart-subtitle .chart-linechartLabel {
+      color: white;
+      padding: 4px; }
+  .chart-heatmapLegend .chart-heatmapHeader {
+    margin-top: 48px; }
+  .chart-heatmapLegend .chart-heatmapColorScaleContainer {
+    margin-top: 12px;
+    margin-left: 16px;
+    width: 350px;
+    height: 60px; }
+    .chart-heatmapLegend .chart-heatmapColorScaleContainer .chart-colorScaleBlock {
+      stroke: black; }
+    .chart-heatmapLegend .chart-heatmapColorScaleContainer .chart-colorScaleLabel {
+      font-family: 'Merriweather', serif;
+      font-size: 9px; }
+  .chart-heatmapLegend .chart-linechartContainer {
+    margin-top: 48px;
+    height: 404px; }
+  .chart-heatmapLegend .chart-copyright {
+    margin-top: 24px;
+    font-weight: 10px;
+    font-family: 'Merriweather', serif;
+    text-align: right;
+    width: 100%;
+    margin-right: 20px; }
+.chart-axis {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px; }
+.chart-barchart text {
+  font-family: "Inconsolata";
+  fill: rgba(0, 0, 0, 0.85); }
+
+.chart-barchart .chart-subBarLegend {
+  position: absolute;
+  left: 48px;
+  top: 20px;
+  width: 108px;
+  font-size: 12px;
+  font-family: Raleway;
+  display: flex;
+  flex-direction: column-reverse; }
+  .chart-barchart .chart-subBarLegend .chart-legendRow {
+    display: flex;
+    height: 16px;
+    margin-bottom: 4px;
+    width: 100%;
+    flex-direction: row; }
+    .chart-barchart .chart-subBarLegend .chart-legendRow .chart-legendColorBlock {
+      height: 100%;
+      flex-basis: 16px;
+      width: 16px;
+      border: 1px solid grey; }
+    .chart-barchart .chart-subBarLegend .chart-legendRow .chart-legendColorLabel {
+      height: 100%;
+      flex-grow: 1;
+      padding-left: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+
+.chart-barchart .chart-barchartSVG .chart-xAxisLabel {
+  text-anchor: middle;
+  font-family: Raleway;
+  font-weight: bold;
+  font-size: 20px; }
+
+.chart-barchart .chart-barchartSVG .chart-bar {
+  fill: gray;
+  stroke: grey; }
+
+.chart-barchart .chart-barchartSVG .chart-baseline {
+  stroke: gray;
+  stroke-width: 1px; }
+
+.chart-barchart .chart-barchartSVG .chart-barLabel {
+  text-anchor: middle;
+  alignment-baseline: hanging;
+  font-size: 16px; }
+
+.chart-barchart .chart-barchartSVG .chart-subBarLabel {
+  text-anchor: middle;
+  font-size: 12px;
+  fill: black; }
+
+@media (max-width: 600px) {
+  .chart-barchart .chart-subBarLegend {
+    top: 0px;
+    width: calc(100% - 60px);
+    height: 24px;
+    flex-direction: row-reverse;
+    font-size: 10px; }
+    .chart-barchart .chart-subBarLegend .chart-legendColorBlock {
+      height: 12px;
+      flex-basis: 12px;
+      width: 12px;
+      border: 1px solid grey; }
+  .chart-barchart .chart-barchartSVG .chart-barLabel {
+    font-size: 12px; } }
+.chart-horizontalBarchart .chart-headerContainer {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Merriweather"; }
+  .chart-horizontalBarchart .chart-headerContainer .chart-legendHeader, .chart-horizontalBarchart .chart-headerContainer .chart-barsHeader {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-decoration: underline; }
+
+.chart-horizontalBarchart .chart-contentWrapper {
+  display: flex;
+  flex-direction: row; }
+  .chart-horizontalBarchart .chart-contentWrapper text {
+    font-family: "Inconsolata", monospace;
+    fill: rgba(0, 0, 0, 0.85); }
+  .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartSVG .chart-bar {
+    fill: #5CA4A9; }
+  .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartSVG .chart-barValueLabel {
+    alignment-baseline: middle;
+    font-size: 12px;
+    fill: black; }
+    .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartSVG .chart-barValueLabel.chart-barOverflowLabel {
+      font-style: italic;
+      fill: red; }
+    .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartSVG .chart-barValueLabel.chart-focused {
+      font-style: normal;
+      font-weight: bold; }
+  .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartSVG .chart-baseline {
+    stroke: gray;
+    stroke-width: 1px; }
+  .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartLegend {
+    height: 100%;
+    position: relative; }
+    .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartLegend .chart-barLabel {
+      font-family: "Merriweather" !important;
+      font-size: 12px;
+      padding-right: 8px;
+      text-align: left;
+      position: absolute;
+      height: 32px;
+      line-height: 32px;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+      vertical-align: middle;
+      overflow-x: hidden;
+      align-items: center;
+      transform: translateY(-12px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: transparent; }
+      .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartLegend .chart-barLabel .chart-barLabelText {
+        color: darkblue;
+        text-decoration: underline;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 8px; }
+      .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartLegend .chart-barLabel.chart-focused {
+        background-color: rgba(0, 0, 0, 0.06); }
+      .chart-horizontalBarchart .chart-contentWrapper .chart-horizontalBarchartLegend .chart-barLabel:not(.chart-focused) {
+        background-color: transparent; }
+
+/*# sourceMappingURL=chartclient.css.map*/

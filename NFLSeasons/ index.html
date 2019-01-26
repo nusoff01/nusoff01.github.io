@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>NFL Seasons</title>
+    
+    <!-- DEVELOPMENT - comment out when prod -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../../chartsLibrary/dist/chartClient.css" /> -->
+    <!-- PROD - comment out when development -->
+    <link rel="stylesheet" type="text/css" href="chartsLibrary/chartclient.css" />
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Raleway|Inconsolata" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./nflSeasons.css" />
+</head>
+<body style="height:100%;">
+    <div class="content">
+        <div class="chartHeader">
+            The NFL from 1990 to 2017
+        </div>
+        <div id="barchart"></div>
+        <div id="controls">Filter by team: <select id="teamSelect" class="headerSelect"></select></div>
+    </div>
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- DEVELOPMENT - comment out when prod -->
+    <!-- <script src="../../../../chartsLibrary/dist/chartclient.js"></script> -->
+    <!-- PROD - comment out when development -->
+    <script src="chartsLibrary/chartclient.js"></script>
+
+
+    <script>
+
+        var chartClient = new ChartClient();
+
+        d3.json("data/nflOutcomesDense.json").then(function(data) {
+                var barChart = chartClient.Barchart(document.getElementById("barchart"));
+                var champColor = "gold";
+                var runnerUpColor = "silver";
+                var lostConfColor = "#457B9D"; //blue
+                var lostDivColor = "#A8DADC"; //light blue
+                var lostWCColor = "#F1FAEE"; //lighter blue
+                var missedPlayoffsColor = "white";
+
+                var colorLabels = ["No Playoffs", "Lost WC", "Lost Div", "Lost Conf.", "Lost SB", "Won SB"];
+
+                function renderWithData (data) {
+                    barChart.render(data, {subBarColorArray: [missedPlayoffsColor, lostWCColor, lostDivColor, 
+                        lostConfColor, runnerUpColor, champColor], subBarColorLabels: colorLabels, xAxisLabel: "Regular season wins", showSubBarLabels: true});
+
+                }
+                renderWithData(data);
+
+                function teamFilter (data, teamName) {
+                    data = JSON.parse(JSON.stringify(data));
+                    return data.map( function (winTotal) {
+                        
+                        var totalCount = 0;
+                        for (var i = 2; i < winTotal.length; i++) {
+                            winTotal[i] = winTotal[i].filter (function (teamSeason) {
+                                if (teamSeason.team == teamName) {
+                                    totalCount++;
+                                    return true;
+                                }
+                                return false;
+                            });
+                        }
+                        winTotal[1] = totalCount;
+                        return winTotal;
+                    });
+                }
+
+                var dataPatriots = teamFilter(data, "New England Patriots");
+
+                var teamMap = {};
+                data.forEach(function (record) {
+                    outcomes = record.slice(2, record.length);
+                    outcomes.forEach(function (outcome) {
+                        outcome.forEach(function(teamSeason) {
+                            teamMap[teamSeason.team] = true;
+                        });
+                    })
+                });
+                var teams = ["NFL"].concat(Object.keys(teamMap));
+
+                var teamSelect = d3.select("#teamSelect");
+                teamSelect
+                .on("change", function (d) {
+                    var team = d3.select(this).property('value');
+                    if (team == "NFL") {
+                        renderWithData(data);
+                    } else {
+                        renderWithData(teamFilter(data, team));
+                    }
+                });
+
+                teamOptions = teamSelect.append("optgroup").attr("class", "headerOutgroup").selectAll("option").data(teams);
+                teamOptions.enter().append("option")
+                    .text(d => d);
+        });
+
+    </script>
+</body>
+</html>
