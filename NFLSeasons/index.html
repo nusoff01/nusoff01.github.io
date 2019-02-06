@@ -12,17 +12,19 @@
 
 
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Raleway|Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Raleway|Inconsolata|Staatliches" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./nflSeasons.css" />
 </head>
 <body style="height:100%;">
-    <div class="content">
-        <div class="chartHeader">
-            The NFL from 1990 to 2017
+    <div class="chartHeader">
+        <div class="titleText">
+            Every NFL season since 1990
         </div>
+    </div>
+    <div class="content">
+        <div id="controls"><select id="teamSelect" class="headerSelect"></select></div>
         <div id="barchart"></div>
-        <div id="controls">Filter by team: <select id="teamSelect" class="headerSelect"></select></div>
     </div>
     
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -85,13 +87,13 @@
                         });
                     })
                 });
-                var teams = ["NFL"].concat(Object.keys(teamMap));
+                var teams = ["NFL (whole league)"].concat(Object.keys(teamMap));
 
                 var teamSelect = d3.select("#teamSelect");
                 teamSelect
                 .on("change", function (d) {
                     var team = d3.select(this).property('value');
-                    if (team == "NFL") {
+                    if (team == "NFL (whole league)") {
                         renderWithData(data);
                     } else {
                         renderWithData(teamFilter(data, team));
