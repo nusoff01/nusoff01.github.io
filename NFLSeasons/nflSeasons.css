@@ -45,11 +45,13 @@ html, body {
     margin-left: 8px;
     margin-right: 8px;
     border: 1px solid grey;
-    padding: 4px;
-    background-image: url("https://image.flaticon.com/icons/svg/60/60781.svg");
+    padding: 8px;
+    background-image: url(https://image.flaticon.com/icons/svg/60/60781.svg);
     background-position: 95% 50%;
     background-repeat: no-repeat;
     background-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .headerSelect option {
