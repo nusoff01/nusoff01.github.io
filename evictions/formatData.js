@@ -212,7 +212,7 @@ function createLinechartData () {
         var city = rawDP[2];
         var yearString = yearStringFunc(rawDP[1])
         var evictionRate = (rawDP[5] === "" || rawDP[5] === null) ? null : Number(rawDP[5]);
-        cities[city][""][yearString] = {"evictionRate": evictionRate}
+        cities[city][""][yearString] = {"Eviction Rate": evictionRate}
     });
     return Object.keys(cities).map(function (cityName){
         var cityObject = {};
