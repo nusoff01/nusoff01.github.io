@@ -37,11 +37,18 @@
                 var lineChart = new tsiClient.ux.LineChart(document.getElementById('chart1'));
                 var linechartData = createLinechartData();
                 lineChart.render(linechartData, {offset: 'UTC', yAxisState: "shared", tooltip: true, legend: "compact", theme: "light", 
-                    singleLineXAxisLabel: true, hideChartControlPanel: true, yExtent: [0,6], yAxisText: "Eviction Rate (%)"});
+                    singleLineXAxisLabel: true, hideChartControlPanel: true, yExtent: [0,6], yAxisText: "Evictions per 100 Renting Households"});
+
+                var measureAxisMap = {
+                    "Poverty Rate": "Percent Below the Poverty Line",
+                    "Median Gross Rent": "Median Gross Rent ($)",
+                    "Percent Renter Occupied": "Percent of Households That Rent",
+                    "Rent Burden": "Percent Paying 30+% of Income in Rent"
+                }
 
                 function renderBarchart (measure) {
                     barChart.render(createDataForMeasure(measure), {theme: 'light', tooltip: true, legend: 'hidden', offset: "Local", 
-                        hideChartControlPanel: true, yAxisText: measure});
+                        hideChartControlPanel: true, yAxisText: measureAxisMap[measure]});
                 }
 
                 document.getElementById('measureSelect').onchange = function(){renderBarchart(this.value)};

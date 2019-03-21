@@ -1,59 +1,66 @@
 <!DOCTYPE html> 
 <html>
     <head>
-            <title>Basic Charts</title>
-            <style>
-                .chartTitle {
-                    text-align: center;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-size: 24px;
-                    margin-bottom: 20px;
-                }
-                .chartTitle select {
-                    padding: 4px;
-                    font-size: 24px;
-                }
-            </style>
+        <title>Charts via iframe example</title>
+        <style>
+            body {
+                margin-left: 20px;
+                margin-right: 20px;
+                align-content: center;
+                font-family: Helvetica;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            body * {
+                margin: 0 auto;
+                max-width: 1024px;
+                min-width: 800px;
+            }
+            h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 24px;
+                padding-left: 20px;
+            }
+
+            .codeBlock {
+                background-color: rgba(0,0,0,.16);
+                margin: 20px;
+                padding: 12px;
+                border-left: 4px solid purple;
+                word-break: break-all;
+            }
+            iframe {
+                margin-bottom: 24px;
+            }
+        </style>
     </head>
-    <body style="font-family: 'Segoe UI', sans-serif; padding: 20px;">
-        <div class="chartTitle">Eviction Rates in Boston and Gateway Cities</div>
-        <div id="chart1" style="width: 100%; height: 500px;"></div>
-        <div class="chartTitle">
-            Compare cities in 2008 and 2016 for: 
-                <select id="measureSelect" style="margin:8px;">
-                        <option>Poverty Rate</option>
-                        <option>Median Gross Rent</option>
-                        <option>Percent Renter Occupied</option>
-                        <option>Rent Burden</option>
-                </select>
+    <body>
+        <div>
+            <h2>How to use an iframe</h2>
+            <p>An iframe is a way to load external content into a website. Specify the width, height, and the source of the externsl content and put the tag in your content just like you
+                would any other. I added the broder style to each of the tags because the default border looks garbagio, but let me know if you want something even cooler (drop shadow, dashed line border, etc.).
+                <br/><br/>
+                Just copy/paste the tags below for linechart and barchart
+                <br/><br/>
+                NOTE - the urls are not finalized, I'll let you know when they are
+            </p>
+            <h3>Linechart</h3>
+            <div class="codeBlock">&ltiframe src="http://nusoff01.github.io/evictions/charts/EvictionRateLinechart.html" height="500px" width="100%" style="border:1px solid grey;">&lt/iframe></div>
+            <iframe src="http://nusoff01.github.io/evictions/charts/EvictionRateLinechart.html" height="500px" width="100%" style="border:1px solid grey;"></iframe>
+            <h3>Barchart</h3>
+            <div class="codeBlock">&ltiframe src="http://nusoff01.github.io/evictions/charts/CityComparisonBarchart.html" height="500px" width="100%" style="border:1px solid grey;">&lt/iframe></div>
+            <iframe src="http://nusoff01.github.io/evictions/charts/CityComparisonBarchart.html" height="500px" width="100%" style="border:1px solid grey;"></iframe>
         </div>
-       
-        <div id="chart2" style="width: 100%; height: 500px;"></div>
-        
-        <script>
-            window.onload = function() {
-
-                var tsiClient = new TsiClient();
-                var lineChart = new tsiClient.ux.LineChart(document.getElementById('chart1'));
-                var linechartData = createLinechartData();
-                lineChart.render(linechartData, {offset: 'UTC', yAxisState: "shared", tooltip: true, legend: "compact", theme: "light", 
-                    singleLineXAxisLabel: true, hideChartControlPanel: true, yExtent: [0,6], yAxisText: "Eviction Rate (%)"});
-
-                function renderBarchart (measure) {
-                    barChart.render(createDataForMeasure(measure), {theme: 'light', tooltip: true, legend: 'hidden', offset: "Local", 
-                        hideChartControlPanel: true, yAxisText: measure});
-                }
-
-                document.getElementById('measureSelect').onchange = function(){renderBarchart(this.value)};
-                var barChart = new tsiClient.ux.BarChart(document.getElementById('chart2'));
-                renderBarchart("Poverty Rate");
-           };
-
-        </script>
-    </body>
-    <!-- boilerplate headers are injected with head.js, grab them from the live example header, or include a link to head.js -->
-    <script src="head.js"></script>
-    <script src="formatData.js"></script>
+    </body>   
 </html>
 
 

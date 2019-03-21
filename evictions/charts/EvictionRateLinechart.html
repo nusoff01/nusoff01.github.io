@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Eviction Rats in Boston and Gateway Cities</title>
+        <style>
+            .chartTitle {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .chartTitle select {
+                padding: 4px;
+                font-size: 24px;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body {
+                padding: 20px;
+            }
+
+            .content {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+            }
+            #linechart {
+                flex-grow: 1;
+                max-height: 600px;
+                margin: 0 auto;
+                max-width: 1024px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="chartTitle">Eviction Rates in Boston and Gateway Cities</div>
+            <div id="linechart" style="width: 100%;"></div>     
+        </div>   
+        <script>
+            window.onload = function() {
+
+                var tsiClient = new TsiClient();
+                var lineChart = new tsiClient.ux.LineChart(document.getElementById('linechart'));
+                var linechartData = createLinechartData();
+                lineChart.render(linechartData, {offset: 'UTC', yAxisState: "shared", tooltip: true, legend: "compact", theme: "light", 
+                    singleLineXAxisLabel: true, hideChartControlPanel: true, yExtent: [0,6], yAxisText: "Evictions per 100 Renting Households"});
+           };
+
+        </script>
+    </body>
+    <!-- boilerplate headers are injected with head.js, grab them from the live example header, or include a link to head.js -->
+    <script src="../head.js"></script>
+    <script src="../formatData.js"></script>
+</html>
+
+
+
+
