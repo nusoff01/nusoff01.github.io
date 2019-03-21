@@ -21,6 +21,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -639,6 +643,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -833,13 +841,15 @@ select::-ms-expand {
   .tsi-legend:not(.hidden) {
     display: block; }
   .tsi-legend.compact {
+    height: fit-content;
+    text-align: center;
+    display: inline-block;
+    height: fit-content;
     margin-left: 20px;
     margin-right: 20px;
     top: 8px;
-    height: 48px !important;
     width: calc(100% - 40px) !important;
     position: absolute;
-    display: flex;
     justify-content: center;
     border-right: none;
     padding: 0;
@@ -856,7 +866,11 @@ select::-ms-expand {
       border: none;
       padding: 0;
       text-align: center;
-      margin: 4px; }
+      margin: 4px;
+      height: 24px;
+      display: inline-block;
+      margin-bottom: 0px;
+      margin-top: 0px; }
       .tsi-legend.compact .tsi-seriesLabel:not(.shown), .tsi-legend.compact .tsi-eventSeriesLabel:not(.shown) {
         border: none; }
       .tsi-legend.compact .tsi-seriesLabel .tsi-seriesNameLabel, .tsi-legend.compact .tsi-eventSeriesLabel .tsi-seriesNameLabel {
@@ -1029,6 +1043,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -1411,6 +1429,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -1760,6 +1782,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu, .tsi-contextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -1945,6 +1971,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu, .tsi-ellipsisMenuContainer .tsi-ellipsisMenu {
   white-space: nowrap;
@@ -2221,6 +2251,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -2578,6 +2612,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -3082,6 +3120,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -3260,6 +3302,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -3602,6 +3648,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -3793,6 +3843,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -4155,6 +4209,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu, .tsi-hierarchy .tsi-hierarchyContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -4442,6 +4500,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -4809,6 +4871,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -5161,6 +5227,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;
@@ -5750,6 +5820,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu, .tsi-modelSearchWrapper .tsi-modelSearchContextMenu {
   white-space: nowrap;
   padding: 4px 0;
@@ -6050,6 +6124,10 @@ div[class^='tsi-'] {
     transform: translateY(0px);
     opacity: 1; } }
 
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
+
 .tsi-baseContextMenu, .tsi-modelAutocompleteWrapper .tsi-modelAutocompleteInputWrapper .awesomplete > ul {
   white-space: nowrap;
   padding: 4px 0;
@@ -6313,6 +6391,10 @@ div[class^='tsi-'] {
   to {
     transform: translateY(0px);
     opacity: 1; } }
+
+.tsi-yAxisText {
+  font-size: 16px !important;
+  text-anchor: middle; }
 
 .tsi-baseContextMenu {
   white-space: nowrap;

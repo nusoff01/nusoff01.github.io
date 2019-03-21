@@ -195,24 +195,42 @@ var raw = [["2507000","2008","Boston","625304","2573","1.55","1.86"],
 
 function createLinechartData () {
     var cities = {
-        "Boston": {"": {}},
-        "Brockton": {"": {}},
-        "Fall River": {"": {}},
-        "Fitchburg": {"": {}},
-        "Haverhill": {"": {}},
-        "Holyoke": {"": {}},
-        "Lawrence": {"": {}},
-        "Lowell": {"": {}},
-        "New Bedford": {"": {}},
-        "Pittsfield": {"": {}},
-        "Springfield": {"": {}},
-        "Worcester": {"": {}}
+        // "": {
+        //     "Boston": {},
+        //     "Brockton": {},
+        //     "Fall River": {},
+        //     "Fitchburg": {},
+        //     "Haverhill": {},
+        //     "Holyoke": {},
+        //     "Lawrence": {},
+        //     "Lowell": {},
+        //     "New Bedford": {},
+        //     "Pittsfield": {},
+        //     "Springfield": {},
+        //     "Worcester": {}
+        // }
+        //}
+        // "": {
+            "Boston": {"": {}},
+            "Brockton": {"": {}},
+            "Fall River": {"": {}},
+            "Fitchburg": {"": {}},
+            "Haverhill": {"": {}},
+            "Holyoke": {"": {}},
+            "Lawrence": {"": {}},
+            "Lowell": {"": {}},
+            "New Bedford": {"": {}},
+            "Pittsfield": {"": {}},
+            "Springfield": {"": {}},
+            "Worcester": {"": {}}
     }
     raw.forEach(function (rawDP) {
         var city = rawDP[2];
         var yearString = yearStringFunc(rawDP[1])
         var evictionRate = (rawDP[5] === "" || rawDP[5] === null) ? null : Number(rawDP[5]);
+        // cities[""][city][yearString] = {"Eviction Rate": evictionRate}
         cities[city][""][yearString] = {"Eviction Rate": evictionRate}
+
     });
     return Object.keys(cities).map(function (cityName){
         var cityObject = {};
@@ -220,5 +238,3 @@ function createLinechartData () {
         return cityObject;
     })
 }
-
-

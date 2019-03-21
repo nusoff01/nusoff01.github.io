@@ -32,15 +32,16 @@
         
         <script>
             window.onload = function() {
-                // render the data in a chart
+
                 var tsiClient = new TsiClient();
                 var lineChart = new tsiClient.ux.LineChart(document.getElementById('chart1'));
                 var linechartData = createLinechartData();
-                lineChart.render(linechartData, {offset: 'UTC', yAxisState: "shared", tooltip: true, legend: "compact", theme: "light", singleLineXAxisLabel: true, hideChartControlPanel: true, canDownload: false});
-
+                lineChart.render(linechartData, {offset: 'UTC', yAxisState: "shared", tooltip: true, legend: "compact", theme: "light", 
+                    singleLineXAxisLabel: true, hideChartControlPanel: true, yExtent: [0,6], yAxisText: "Eviction Rate (%)"});
 
                 function renderBarchart (measure) {
-                    barChart.render(createDataForMeasure(measure), {theme: 'light', tooltip: true, legend: 'hidden', offset: "Local", canDownload: false});
+                    barChart.render(createDataForMeasure(measure), {theme: 'light', tooltip: true, legend: 'hidden', offset: "Local", 
+                        hideChartControlPanel: true, yAxisText: measure});
                 }
 
                 document.getElementById('measureSelect').onchange = function(){renderBarchart(this.value)};
@@ -50,7 +51,6 @@
 
         </script>
     </body>
-
     <!-- boilerplate headers are injected with head.js, grab them from the live example header, or include a link to head.js -->
     <script src="head.js"></script>
     <script src="formatData.js"></script>
