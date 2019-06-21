@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scatter Plot</title>
+
+        <!-- DEV -->
+        <!-- <script src="../../../dist/tsiclient.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "../../../dist/tsiclient.css" /> -->
+
+        <!-- PROD -->
+        <script src="./tsi/tsiclient.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "./tsi/tsiclient.css" />
+
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+            box-sizing:border-box;
+            color:#0d0f0e;
+            background-color:white;
+            font-family: 'Merriweather', serif;
+		}
+
+        * {
+            box-sizing:border-box;
+        }
+
+        .leaflet-control-attribution {
+            color:#0d0f0e !important;
+            background-color:white !important;
+        }
+
+        .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+            color:#0d0f0e !important;
+            background-color:white !important;
+        }
+
+        .header {
+            height: 48px;
+            padding-left: 20px;
+            font-size: 24px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .subheader {
+            font-weight: lighter;
+            font-size: 12px;
+            text-align: center;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .commanding {
+            padding-left: 20px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            border-bottom: 2px solid rgb(20,20,20);
+            width: calc(100% - 40px);
+
+        }
+        .commanding select {
+            -webkit-appearance: none; 
+            box-shadow: none !important;
+            font-size: 14px;
+            color: rgb(36, 21, 21);
+            outline: none;
+            border: 2px solid #677DB7;
+            border-radius: 0px;
+            padding: 4px;
+            font-weight: bold;
+        }
+
+        .commanding .selectLabel {
+            padding-right: 8px;
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-basis: 500px;
+            flex-grow: 1;
+            width:100%;
+            flex-direction: row;
+            border-bottom: 1px solid grey;
+        }
+
+        .selectGroup {
+            display: flex;
+            font-size: 14px;
+            align-content: center;
+            align-items: center;
+            font-style: italic;
+        }
+
+        .chartContainer {
+            height: auto;
+            flex-grow: 2;
+            min-width: 0px;
+            flex-basis: 400px;
+            position: relative;
+        }
+
+        .chartContainer .scatterHeader {
+            position: absolute;
+            top: 20px;
+            font-size: 16px;
+            z-index: 1;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+
+        .muted {
+            font-weight: lighter !important;
+        }
+
+        #chart1 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .footer {
+            font-size: 12px;
+            height: 20px;
+            line-height: 20px;
+            padding-left: 20px;
+        }
+
+        .mapContainer {
+            height: auto;
+            flex-basis: 360px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        a {
+            color: lightblue;
+        }
+        @media only screen and (max-width: 800px) {
+            .container {
+                display: block;
+                height: 640px;
+            }
+            .chartContainer, .mapContainer {
+                width: auto;
+                height: 300px;
+            }
+            .header {
+                font-size: 20px;
+            }
+
+            .chartContainer .scatterHeader {
+                font-size: 12px;
+            }
+
+            .subheader {
+                margin-bottom: 8px;
+            }
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+	</style>
+
+	<style>
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+
+
+
+    </head>
+    <body>
+        <div class="content-wrapper">
+        <div class="header">
+            <div>Boston 911 Call Data</div>
+        </div>
+        <div class="subheader">All calls to 911 from 2011 to 2018 within the city limits of Boston, organized by Census tract and call type</div>
+        <div class="commanding">
+            <div class="selectGroup">
+                    <div class="selectLabel">Call type:</div>
+
+                <select onchange="onMeasureChange(this.value)">
+                    <option>Violence</option>
+                    <option>Social Disorder</option>
+                    <option>Major Medical</option>
+                    <option>Guns</option>
+                    <option>Private Conflict</option>
+                    <option>Youth Health</option>
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <div class="chartContainer">
+                <div class="scatterHeader">
+                    Median Household Income <span class="muted">vs.</span> Call Frequency
+                </div>
+                <div id="chart1"></div>
+            </div>
+            <div class="mapContainer">
+                <div id='map'></div>
+            </div>
+        </div>
+        <div class="footer">Copyright 2019 Nick Usoff. Data: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XTEJRE">BARI</a> and US Census</div>
+        </div>
+        <script>
+            var renderScatterPlot;
+            var createColorFunction;
+            var colorMap;
+            var geojson;
+            var scatterPlot;
+            var onMeasureChange = (newMeasure) => {
+                renderScatterPlot(newMeasure);
+                let newColorFunction = createColorFunction(newMeasure);
+                geojson.eachLayer(function(layer) {
+                    layer.setStyle({fillColor: newColorFunction(layer.feature.properties.GEOID10)});
+                });
+            }
+
+            function highlightFeature(layer) {
+                layer.setStyle({
+                    weight: 5,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.8
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
+            }
+
+            function normalizeFeatures () {
+                geojson.eachLayer((layer) => {
+                    layer.setStyle({
+                        weight: 1,
+                        opacity: 1,
+                        color: 'rgba(0,0,0,.2)',
+                        dashArray: '3',
+                        fillOpacity: 0.8
+                    });
+                });
+             
+            }
+
+            function deHighlightFeature (layer) {
+                layer.setStyle({
+                    weight: 1,
+                    dashArray: '3',
+                    color: 'rgba(0,0,0,.2)',
+                    fillOpacity: 0.6
+                });
+            }
+
+            function focusOnDot (tractID) {
+                scatterPlot.labelMouseOver(tractID + "_0", '');
+            }
+
+            function tractMouseleave() {
+                scatterPlot.labelMouseOut();
+            }
+
+            function focusOnTract (tractID) {
+                if (geojson) {
+                    geojson.eachLayer((layer) => {
+                        if(layer.feature.properties.GEOID10 === tractID) {
+                            highlightFeature(layer);
+                        } else {
+                            deHighlightFeature(layer);
+                        }
+                    })
+                }
+            }
+
+            
+
+            window.onload = function() {
+                d3.json('data/censusTracts.json', (mData) => {
+                    d3.json('data/econometricDataCT.json', (eData) => {
+                        let iteration = 0;
+                        let getData = (scaleFactor = 1) => {
+                            let from = new Date(Math.floor((new Date()).valueOf() / (1000*60)) * (1000*60) + iteration*1000*60);
+                            let tracts = [];
+                            let dateString = from.toISOString()
+                            Object.keys(eData).forEach((tractID) => {
+                                let tractObject = {}
+                                tractObject[String(tractID)] = {
+                                    '': {}
+                                }
+                                tractObject[String(tractID)][''][dateString] = eData[tractID];
+                                tracts.push(tractObject)
+                            });
+                            return tracts;
+                        }
+
+
+                        // render the data in a chart
+                        let tsiClient = new TsiClient();
+                        let data = getData();
+                        let focusedTract = null;
+
+                        scatterPlot =  new tsiClient.ux.ScatterPlot(document.getElementById('chart1'));
+
+                        let dotFocus = (aggKey, splitBy, ts) => {
+                            let tractID = aggKey.slice(0,aggKey.length - 2);
+                            if (tractID !== focusedTract) {
+                                focusOnTract(tractID);
+                                focusedTract = tractID;
+                            }
+                        }
+
+                        let cDO = data.map(() => {
+                            return {
+                                color: '#677DB7'
+                            }
+                        });
+                        renderScatterPlot = (measure) => {
+                            scatterPlot.render(data, 
+                            {isTemporal: false, grid: false, tooltip: true, theme: 'light', 
+                                spMeasures: ['Median Income', measure, 'Household Count'], 
+                                scatterPlot, legend: 'hidden', onDotFocus: dotFocus, canDownload: false}, 
+                                cDO);
+                            document.getElementsByClassName('tsi-voronoiWrap')[0].onmouseleave = () => normalizeFeatures();
+                        }
+
+                        createColorFunction = (measure) => {
+                            let domain = [0, d3.mean(Object.keys(eData).map((key) => eData[key]), d => d[measure]) * 4];
+                            let colorScale = d3.scaleSequential(d3.interpolateReds).domain(domain);
+                            return (geoID) => {
+                                if (eData[geoID] !== undefined) {
+                                    let majorMedCount = eData[geoID][measure];
+                                    return colorScale(majorMedCount);
+                                }
+                                return 'white';
+                            }
+    
+                        }
+
+                        renderScatterPlot('Violence');
+                        geojson = createMap(mData, eData, 'Violence');
+
+                    });
+                });
+            }
+
+            function createMap (mData, eData, measure) {
+                // map initialization
+                var map = L.map('map').setView([42.317, -71.089], 11);
+
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                    maxZoom: 18,
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox.light'
+                }).addTo(map);
+
+                let colorFunction = createColorFunction(measure);
+
+                function style(feature) {
+                    return {
+                        weight: 1,
+                        opacity: 1,
+                        color: 'rgba(0,0,0,.2)',
+                        dashArray: '3',
+                        fillOpacity: 0.8,
+                        fillColor: colorFunction(feature.properties.GEOID10)
+                    };
+                }
+
+                var geojson;
+
+                function resetHighlight(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 1,
+                        opacity: 1,
+                        color: 'rgba(0,0,0,.2)',
+                        dashArray: '3',
+                        fillOpacity: 0.8
+                    });
+
+                }
+
+                function zoomToFeature(e) {
+                    map.fitBounds(e.target.getBounds());
+                }
+
+                function onEachFeature(feature, layer) {
+                    layer.on({
+                        mouseover: (e) => { focusOnTract(e.target.feature.properties.GEOID10); focusOnDot(e.target.feature.properties.GEOID10); },
+                        mouseout: () => {
+                            normalizeFeatures();
+                            tractMouseleave();
+                        },
+                        click: zoomToFeature
+                    });
+                }
+
+                geojson = L.geoJson(mData, {
+                    style: style,
+                    onEachFeature: onEachFeature
+                }).addTo(map);
+
+                map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+
+                return geojson;
+            }
+            
+        </script>
+    </body>
+</html>
