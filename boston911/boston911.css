@@ -1,0 +1,175 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    box-sizing:border-box;
+    color:#0d0f0e;
+    background-color:white;
+}
+
+* {
+    box-sizing:border-box;
+    font-family: 'Merriweather', serif !important;
+}
+
+.leaflet-control-attribution {
+    color:#0d0f0e !important;
+    background-color:white !important;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    color:#0d0f0e !important;
+    background-color:white !important;
+}
+
+.header {
+    height: 48px;
+    padding-left: 20px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.subheader {
+    font-weight: lighter;
+    font-size: 12px;
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.commanding {
+    padding-left: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    border-bottom: 2px solid rgb(20,20,20);
+    width: calc(100% - 40px);
+
+}
+.commanding select {
+    -webkit-appearance: none; 
+    box-shadow: none !important;
+    font-size: 12px;
+    color: rgb(36, 21, 21);
+    outline: none;
+    border: 2px solid #677DB7;
+    border-radius: 0px;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.commanding .selectLabel {
+    padding-right: 8px;
+}
+
+#map {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-basis: 500px;
+    max-height: 800px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width:100%;
+    flex-direction: row;
+}
+
+.selectGroup {
+    display: flex;
+    font-size: 12px;
+    align-content: center;
+    align-items: center;
+    font-style: italic;
+    padding-left: 8px;
+}
+
+.chartContainer {
+    height: auto;
+    flex-grow: 2;
+    min-width: 0px;
+    flex-basis: 400px;
+    position: relative;
+}
+
+.chartContainer .scatterHeader {
+    position: absolute;
+    top: 20px;
+    font-size: 16px;
+    z-index: 1;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.muted {
+    font-weight: lighter !important;
+}
+
+#chart1 {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 20px;
+    border-top: 1px solid grey;
+    width: 100%;
+
+}
+
+.mapContainer {
+    height: auto;
+    flex-basis: 360px;
+    padding: 20px;
+    flex-grow: 1;
+}
+a {
+    color: lightblue;
+}
+
+.linechartContainer {
+    width: 100%;
+    height: 180px;
+}
+#linechart {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        display: block;
+        height: 640px;
+    }
+    .chartContainer, .mapContainer {
+        width: auto;
+        height: 300px;
+    }
+    .header {
+        font-size: 20px;
+    }
+
+    .chartContainer .scatterHeader {
+        font-size: 12px;
+    }
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>

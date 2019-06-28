@@ -3,14 +3,16 @@
     <head>
         <title>Scatter Plot</title>
 
+        <!-- NEIGHBORHOOD MAPS - http://www.bostonplans.org/getattachment/d09af00c-2268-437b-9e40-fd06d0cd20a2 -->
+
         <!-- DEV -->
-        <!-- <script src="../../../dist/tsiclient.js"></script>
-        <link rel = "stylesheet" type = "text/css" href = "../../../dist/tsiclient.css" /> -->
+        <!-- <script src="../../../../dist/tsiclient.js"></script> -->
+        <!-- <link rel = "stylesheet" type = "text/css" href = "../../../../dist/tsiclient.css" /> -->
+        <link rel = "stylesheet" type = "text/css" href = "./boston911.css" />
 
         <!-- PROD -->
-        <script src="./tsi/tsiclient.js"></script>
-        <link rel = "stylesheet" type = "text/css" href = "./tsi/tsiclient.css" />
-
+        <script src="./data/tsiclient.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "./data/tsiclient.css" />
 
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
@@ -18,180 +20,6 @@
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
         <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-            box-sizing:border-box;
-            color:#0d0f0e;
-            background-color:white;
-            font-family: 'Merriweather', serif;
-		}
-
-        * {
-            box-sizing:border-box;
-        }
-
-        .leaflet-control-attribution {
-            color:#0d0f0e !important;
-            background-color:white !important;
-        }
-
-        .leaflet-control-zoom-in, .leaflet-control-zoom-out {
-            color:#0d0f0e !important;
-            background-color:white !important;
-        }
-
-        .header {
-            height: 48px;
-            padding-left: 20px;
-            font-size: 24px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .subheader {
-            font-weight: lighter;
-            font-size: 12px;
-            text-align: center;
-            max-width: 500px;
-            margin-bottom: 20px;
-        }
-
-        .commanding {
-            padding-left: 20px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            flex-direction: row-reverse;
-            border-bottom: 2px solid rgb(20,20,20);
-            width: calc(100% - 40px);
-
-        }
-        .commanding select {
-            -webkit-appearance: none; 
-            box-shadow: none !important;
-            font-size: 14px;
-            color: rgb(36, 21, 21);
-            outline: none;
-            border: 2px solid #677DB7;
-            border-radius: 0px;
-            padding: 4px;
-            font-weight: bold;
-        }
-
-        .commanding .selectLabel {
-            padding-right: 8px;
-        }
-
-        #map {
-            height: 100%;
-        }
-
-        .container {
-            display: flex;
-            flex-basis: 500px;
-            flex-grow: 1;
-            width:100%;
-            flex-direction: row;
-            border-bottom: 1px solid grey;
-        }
-
-        .selectGroup {
-            display: flex;
-            font-size: 14px;
-            align-content: center;
-            align-items: center;
-            font-style: italic;
-        }
-
-        .chartContainer {
-            height: auto;
-            flex-grow: 2;
-            min-width: 0px;
-            flex-basis: 400px;
-            position: relative;
-        }
-
-        .chartContainer .scatterHeader {
-            position: absolute;
-            top: 20px;
-            font-size: 16px;
-            z-index: 1;
-            font-weight: bold;
-            width: 100%;
-            text-align: center;
-        }
-
-        .muted {
-            font-weight: lighter !important;
-        }
-
-        #chart1 {
-            height: 100%;
-            width: 100%;
-        }
-
-        .footer {
-            font-size: 12px;
-            height: 20px;
-            line-height: 20px;
-            padding-left: 20px;
-        }
-
-        .mapContainer {
-            height: auto;
-            flex-basis: 360px;
-            padding: 20px;
-            flex-grow: 1;
-        }
-
-        a {
-            color: lightblue;
-        }
-        @media only screen and (max-width: 800px) {
-            .container {
-                display: block;
-                height: 640px;
-            }
-            .chartContainer, .mapContainer {
-                width: auto;
-                height: 300px;
-            }
-            .header {
-                font-size: 20px;
-            }
-
-            .chartContainer .scatterHeader {
-                font-size: 12px;
-            }
-
-            .subheader {
-                margin-bottom: 8px;
-            }
-        }
-
-        .content-wrapper {
-            margin: 0 auto;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-
-	</style>
-
-	<style>
-.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
-.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
-
-
-
     </head>
     <body>
         <div class="content-wrapper">
@@ -201,8 +29,7 @@
         <div class="subheader">All calls to 911 from 2011 to 2018 within the city limits of Boston, organized by Census tract and call type</div>
         <div class="commanding">
             <div class="selectGroup">
-                    <div class="selectLabel">Call type:</div>
-
+                <div class="selectLabel">Call type:</div>
                 <select onchange="onMeasureChange(this.value)">
                     <option>Violence</option>
                     <option>Social Disorder</option>
@@ -210,6 +37,20 @@
                     <option>Guns</option>
                     <option>Private Conflict</option>
                     <option>Youth Health</option>
+                </select>
+            </div>
+            <div class="selectGroup">
+                <div class="selectLabel">Year:</div>
+                <select onchange="onYearChange(this.value)">
+                    <option>All</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
                 </select>
             </div>
         </div>
@@ -224,55 +65,125 @@
                 <div id='map'></div>
             </div>
         </div>
+        <div class="linechartContainer">
+            <div id="linechart"></div>
+        </div>
         <div class="footer">Copyright 2019 Nick Usoff. Data: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XTEJRE">BARI</a> and US Census</div>
         </div>
         <script>
             var renderScatterPlot;
+            var renderLinechart;
             var createColorFunction;
             var colorMap;
             var geojson;
             var scatterPlot;
-            var onMeasureChange = (newMeasure) => {
-                renderScatterPlot(newMeasure);
-                let newColorFunction = createColorFunction(newMeasure);
+            var linechart;
+
+            var getData;
+            var getLinechartData;
+
+            var callType = 'Violence';
+            var year = 'All';
+            var censusVariable = 'Median Household Income';
+            var pinnedTractID = '25025091600';
+
+            var onMeasureChange = (newCall) => {
+                callType = newCall;
+                updateCharts(true);
+
+            }
+
+            var onYearChange = (newYear) => {
+                year = newYear;
+                updateCharts();
+            }
+
+            var onCensusVariableChange = (newCensusVariable) => {
+                censusVariable = newCensusVariable;
+                updateCharts(true);
+
+            }
+
+            var updateCharts = (updateLinechart) => {
+                let data = getData(year);
+                renderScatterPlot(censusVariable, callType, data);
+                let newColorFunction = createColorFunction(callType, year);
                 geojson.eachLayer(function(layer) {
                     layer.setStyle({fillColor: newColorFunction(layer.feature.properties.GEOID10)});
                 });
+                if (updateLinechart) {
+                    let linechartData = getLinechartData(pinnedTractID, callType);
+                    renderLinechart(linechartData);
+                }
             }
 
             function highlightFeature(layer) {
-                layer.setStyle({
-                    weight: 5,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.8
-                });
-
+                if (layer.feature.properties.GEOID10 !== pinnedTractID) {
+                    layer.setStyle({
+                        weight: 2,
+                        color: '#666',
+                        dashArray: '',
+                        fillOpacity: 0.8
+                    });
+                }
                 if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
                     layer.bringToFront();
                 }
             }
 
+            function pinTract (tractID) {
+                let oldPinned = pinnedTractID;
+                pinnedTractID = tractID;
+                if (pinnedTractID === oldPinned){
+                    return;
+                }
+                if (geojson) {
+                    geojson.eachLayer((layer) => {
+                        if(layer.feature.properties.GEOID10 === tractID) {
+                            layer.setStyle({
+                                weight: 5,
+                                color: '#666',
+                                dashArray: '',
+                                fillOpacity: 1
+                            });
+
+                            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                                layer.bringToFront();
+                            }
+                        } 
+                        if(layer.feature.properties.GEOID10 === oldPinned) {
+                            deHighlightFeature(layer);
+                        }
+                    })
+                }
+                renderLinechart(getLinechartData(pinnedTractID, callType))
+                // normalizeFeatures();
+            }
+
             function normalizeFeatures () {
                 geojson.eachLayer((layer) => {
-                    layer.setStyle({
-                        weight: 1,
-                        opacity: 1,
-                        color: 'rgba(0,0,0,.2)',
-                        dashArray: '3',
-                        fillOpacity: 0.8
-                    });
+                    if (layer.feature.properties.GEOID10 !== pinnedTractID) {
+                        layer.setStyle({
+                            weight: 1,
+                            opacity: 1,
+                            color: 'rgba(0,0,0,.2)',
+                            dashArray: '3',
+                            fillOpacity: 0.8
+                        });
+                    }
                 });
              
             }
 
             function deHighlightFeature (layer) {
-                layer.setStyle({
-                    weight: 1,
-                    dashArray: '3',
-                    color: 'rgba(0,0,0,.2)',
-                    fillOpacity: 0.6
-                });
+                if (layer.feature.properties.GEOID10 !== pinnedTractID) {
+                    layer.setStyle({
+                        weight: 1,
+                        dashArray: '3',
+                        color: 'rgba(0,0,0,.2)',
+                        fillOpacity: 0.6
+                    });
+                }
             }
 
             function focusOnDot (tractID) {
@@ -299,9 +210,10 @@
 
             window.onload = function() {
                 d3.json('data/censusTracts.json', (mData) => {
-                    d3.json('data/econometricDataCT.json', (eData) => {
+                    d3.json('data/correctedTractData.json', (eData) => {
+                    d3.json('data/monthlyData.json', (monthlyData) => {
                         let iteration = 0;
-                        let getData = (scaleFactor = 1) => {
+                        getData = (dataYear = 'All') => {
                             let from = new Date(Math.floor((new Date()).valueOf() / (1000*60)) * (1000*60) + iteration*1000*60);
                             let tracts = [];
                             let dateString = from.toISOString()
@@ -310,19 +222,42 @@
                                 tractObject[String(tractID)] = {
                                     '': {}
                                 }
-                                tractObject[String(tractID)][''][dateString] = eData[tractID];
+                                let dataForTract = eData[tractID][dataYear];
+                                Object.keys(dataForTract).forEach((measure) => {
+                                    dataForTract[measure] = Math.round(dataForTract[measure] * 100) / 100;
+                                });
+                                tractObject[String(tractID)][''][dateString] = dataForTract;
+                                tractObject[String(tractID)][''][dateString]['Median Household Income'] = eData[tractID]['Median Household Income'];
+                                tractObject[String(tractID)][''][dateString]['Household Count'] = eData[tractID]['Household Count'];
+
                                 tracts.push(tractObject)
                             });
                             return tracts;
                         }
+                        getLinechartData = (tractID, measure = 'Violence') => {
+                            let dataObj = {};
 
+                            Object.keys(monthlyData[tractID]).forEach((month) => {
+                                let dataForTract = monthlyData[tractID][month];
+                                let roundedMeasureValue = (dataForTract[measure] === undefined) ? null : Math.round(dataForTract[measure] * 100) / 100;
+                                let measureObj = {};
+                                measureObj[measure] = roundedMeasureValue;
+                                dataObj[new Date(month).toISOString()] = measureObj;
+                            });
+                            let chartData = {};
+                            chartData[tractID] = {'': dataObj};
+                            return [chartData];
+                        }
 
                         // render the data in a chart
                         let tsiClient = new TsiClient();
                         let data = getData();
+                        let linechartData = getLinechartData(pinnedTractID);
                         let focusedTract = null;
 
                         scatterPlot =  new tsiClient.ux.ScatterPlot(document.getElementById('chart1'));
+                        linechart = new tsiClient.ux.LineChart(document.getElementById('linechart'));
+
 
                         let dotFocus = (aggKey, splitBy, ts) => {
                             let tractID = aggKey.slice(0,aggKey.length - 2);
@@ -337,21 +272,32 @@
                                 color: '#677DB7'
                             }
                         });
-                        renderScatterPlot = (measure) => {
+
+                        let callLabel = (callType) => {
+                            return 'Yearly calls / 1000 people'
+                        }
+
+                        renderScatterPlot = (xAxisMeasure, yAxisMeasure, data) => {
                             scatterPlot.render(data, 
                             {isTemporal: false, grid: false, tooltip: true, theme: 'light', 
-                                spMeasures: ['Median Income', measure, 'Household Count'], 
-                                scatterPlot, legend: 'hidden', onDotFocus: dotFocus, canDownload: false}, 
+                                spMeasures: [xAxisMeasure, yAxisMeasure, 'Household Count'], 
+                                scatterPlot, legend: 'hidden', onDotFocus: dotFocus, canDownload: false,
+                                spAxisLabels: [xAxisMeasure, callLabel('')]}, 
                                 cDO);
                             document.getElementsByClassName('tsi-voronoiWrap')[0].onmouseleave = () => normalizeFeatures();
                         }
 
-                        createColorFunction = (measure) => {
-                            let domain = [0, d3.mean(Object.keys(eData).map((key) => eData[key]), d => d[measure]) * 4];
+                        renderLinechart = (data) => {
+                            linechart.render(data, {legend: 'compact', theme: 'light', xAxisTimeFormat: () => 'Y', offset: 'Local', hideChartControlPanel: true});
+                        }
+
+
+                        createColorFunction = (measure, year) => {
+                            let domain = [0, d3.mean(Object.keys(eData).map((key) => eData[key]), d => d[year][measure]) * 4];
                             let colorScale = d3.scaleSequential(d3.interpolateReds).domain(domain);
                             return (geoID) => {
                                 if (eData[geoID] !== undefined) {
-                                    let majorMedCount = eData[geoID][measure];
+                                    let majorMedCount = eData[geoID][year][measure];
                                     return colorScale(majorMedCount);
                                 }
                                 return 'white';
@@ -359,11 +305,13 @@
     
                         }
 
-                        renderScatterPlot('Violence');
+                        renderScatterPlot('Median Household Income', 'Violence', data);
+                        renderLinechart(linechartData);
                         geojson = createMap(mData, eData, 'Violence');
 
                     });
-                });
+                    });
+                })
             }
 
             function createMap (mData, eData, measure) {
@@ -378,7 +326,7 @@
                     id: 'mapbox.light'
                 }).addTo(map);
 
-                let colorFunction = createColorFunction(measure);
+                let colorFunction = createColorFunction(measure, year);
 
                 function style(feature) {
                     return {
@@ -407,7 +355,7 @@
                 }
 
                 function zoomToFeature(e) {
-                    map.fitBounds(e.target.getBounds());
+                    // map.fitBounds(e.target.getBounds());
                 }
 
                 function onEachFeature(feature, layer) {
@@ -417,7 +365,7 @@
                             normalizeFeatures();
                             tractMouseleave();
                         },
-                        click: zoomToFeature
+                        click: (e) => { pinTract(e.target.feature.properties.GEOID10);}
                     });
                 }
 

@@ -156,6 +156,19 @@ select::-ms-expand {
 .tsi-lineChart {
   display: flex;
   position: relative; }
+  .tsi-lineChart .tsi-rangeTextContainer {
+    pointer-events: none;
+    height: 17px;
+    left: 100px;
+    top: 4px;
+    position: absolute;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 11px;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-content: center; }
   .tsi-lineChart .tsi-chartControlsPanel {
     z-index: 2;
     pointer-events: none; }
@@ -259,6 +272,9 @@ select::-ms-expand {
   .tsi-lineChart.tsi-dark {
     color: #fff;
     background: #0d0f0e; }
+    .tsi-lineChart.tsi-dark .tsi-rangeTextContainer {
+      color: #1e2223;
+      background-color: #fff; }
     .tsi-lineChart.tsi-dark .tsi-lineChartSVG text {
       fill: #fff; }
     .tsi-lineChart.tsi-dark .tsi-lineChartSVG .focus circle {
@@ -374,6 +390,9 @@ select::-ms-expand {
   .tsi-lineChart.tsi-light {
     color: #000;
     background: #ffffff; }
+    .tsi-lineChart.tsi-light .tsi-rangeTextContainer {
+      color: #f2f2f2;
+      background-color: #000; }
     .tsi-lineChart.tsi-light .tsi-lineChartSVG text {
       fill: #000; }
     .tsi-lineChart.tsi-light .tsi-lineChartSVG .focus circle {
@@ -2366,17 +2385,6 @@ select::-ms-expand {
     right: 60px;
     top: calc(100% - 40px);
     background-color: white; }
-  .tsi-availabilityChart .tsi-rangeTextContainer {
-    pointer-events: none;
-    height: 17px;
-    color: white;
-    left: 100px;
-    top: 4px;
-    position: absolute;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: 12px;
-    border-radius: 4px; }
   .tsi-availabilityChart.tsi-dark {
     background-color: #0d0f0e;
     color: #fff; }
@@ -2447,8 +2455,7 @@ select::-ms-expand {
         stroke-width: 2px; }
   .tsi-availabilityChart.tsi-compact .tsi-rangeTextContainer {
     background: none !important;
-    top: 30px;
-    font-size: 11px; }
+    transform: translate(-50%, -2px) !important; }
   .tsi-availabilityChart.tsi-compact .tsi-timePickerContainer {
     height: calc(100% - 8px); }
     .tsi-availabilityChart.tsi-compact .tsi-timePickerContainer path {
@@ -2818,7 +2825,8 @@ select::-ms-expand {
         border: none;
         float: right;
         cursor: pointer;
-        margin-left: 8px; }
+        margin-left: 8px;
+        padding: 0px; }
     .tsi-dateTimePicker .tsi-timeControlsContainer .tsi-timezoneContainer {
       padding-bottom: 12px;
       width: 100%; }
@@ -4121,6 +4129,11 @@ select::-ms-expand {
     right: 0px; }
   .tsi-scatterPlot .tsi-scatterPlotSVG .xAxis, .tsi-scatterPlot .tsi-scatterPlotSVG .yAxis text {
     font-size: 12px; }
+  .tsi-scatterPlot .tsi-scatterPlotSVG .tsi-AxisLabel {
+    font-weight: 600;
+    font-size: 13px; }
+  .tsi-scatterPlot .tsi-scatterPlotSVG .tsi-testAxisText {
+    visibility: hidden; }
   .tsi-scatterPlot .tsi-scatterPlotSVG .tsi-focus {
     z-index: -10; }
   .tsi-scatterPlot .tsi-scatterPlotSVG .tsi-focusLine {
