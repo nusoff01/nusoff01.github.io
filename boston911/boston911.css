@@ -1,9 +1,10 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     box-sizing:border-box;
     color:#0d0f0e;
-    background-color:white;
+    background-color: #EDF2F4;
+    height: fit-content;
 }
 
 * {
@@ -95,15 +96,16 @@ html, body {
     min-width: 0px;
     flex-basis: 400px;
     position: relative;
+    padding: 20px;
 }
 
 .chartContainer .scatterHeader {
     position: absolute;
-    top: 20px;
+    top: 32px;
     font-size: 16px;
     z-index: 1;
     font-weight: bold;
-    width: 100%;
+    width: calc(100% - 40px);
     text-align: center;
 }
 
@@ -128,17 +130,19 @@ html, body {
 
 .mapContainer {
     height: auto;
-    flex-basis: 360px;
+    flex-basis: 320px;
     padding: 20px;
     flex-grow: 1;
 }
 a {
-    color: lightblue;
+    color: blue;
 }
 
 .linechartContainer {
     width: 100%;
-    height: 180px;
+    height: 200px;
+    padding: 20px;
+    padding-top: 0px;
 }
 #linechart {
     height: 100%;
