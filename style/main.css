@@ -1,3 +1,6 @@
+html {
+	width: 100vw;
+}
 body {
 	max-width: 1300px;
 	margin: 0 auto;
@@ -35,6 +38,22 @@ a {
     transition: all 0.3s;
 }
 
+.header {
+	max-width: 100%;
+	margin: 0 16px;
+	padding: 32px 0px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.header a {
+	margin-right: 20px;
+	font-size: 24px;
+}
+
+.header a.selected {
+	border-bottom: 2px solid black;
+}
+
 a:hover {
 	color: white;
 	background-color: rgba(66, 9, 104, 0.25);
@@ -56,8 +75,7 @@ section {
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
-   height: 100vh;
-
+   height: calc(100vh - 94px);
 }
 
 .reverse {
@@ -119,7 +137,7 @@ h1#latest, h1#me {
 
 .project {
 	height: 70vh;
-	margin: 2rem;
+	margin: 16px;
 	max-width:100%;
 	overflow-x: hidden;
 	border-bottom: solid 1px rgba(66, 9, 104, 0.5);
@@ -181,6 +199,11 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);}
 
 @media all and (max-width: 1000px) {
 
+	.header {
+		margin: 8px 0px;
+		max-width: 100%;
+		text-align: center;
+	}	
 
 	body{
 		width: 100%;

@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Scatter Plot</title>
+        <title>Boston 911 Data</title>
 
         <!-- NEIGHBORHOOD MAPS - http://www.bostonplans.org/getattachment/d09af00c-2268-437b-9e40-fd06d0cd20a2 -->
+
+        <link rel = "stylesheet" type = "text/css" href = "./boston911.css" />
 
         <!-- DEV -->
         <!-- <script src="../../../../dist/tsiclient.js"></script> -->
         <!-- <link rel = "stylesheet" type = "text/css" href = "../../../../dist/tsiclient.css" /> -->
-        <link rel = "stylesheet" type = "text/css" href = "./boston911.css" />
-
         <!-- PROD -->
-        <script src="./data/tsiclient.js"></script>
-        <link rel = "stylesheet" type = "text/css" href = "./data/tsiclient.css" />
+        <link rel="stylesheet" type="text/css" href='../theOvertStyles.css'/>
+        <script src="./tsiclient/tsiclient.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "./tsiclient/tsiclient.css" />
 
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
-        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Raleway|Inconsolata|Lato|Overpass+Mono|Staatliches" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83012406-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-83012406-2');
+        </script>
+
     </head>
     <body>
         <div class="content-wrapper">
@@ -56,8 +68,18 @@
         </div>
         <div class="container">
             <div class="chartContainer">
-                <div class="scatterHeader">
-                    Median Household Income <span class="muted">vs.</span> Call Frequency
+                <div class="chartHeader scatterHeader">
+                    <select onchange="onCensusVariableChange(this.value)">
+                        <option>Median Household Income</option>
+                        <option>% Below Poverty Level</option>
+                        <option>% White (non-Hispanic/Latino)</option>
+                        <option>% Black or African American</option>
+                        <option>% Asian</option>
+                        <option>% Hispanic or Latino</option>
+                        <option>% Less Than HS Graduate</option>
+                    </select>
+                    <span class="muted">vs.</span> # of Calls
+    
                 </div>
                 <div id="chart1"></div>
             </div>
@@ -66,7 +88,14 @@
             </div>
         </div>
         <div class="linechartContainer">
-            <div id="linechart"></div>
+            <div class="chartHeader">
+                Selected tract's trend over time
+            </div>
+            <div id="linechart">
+                <div class="linechartPrompt">
+                    Select a tract from the map
+                </div>
+            </div>
         </div>
         <div class="footer">Copyright 2019 Nick Usoff. Data: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XTEJRE">BARI</a> and US Census</div>
         </div>
@@ -100,8 +129,9 @@
 
             var onCensusVariableChange = (newCensusVariable) => {
                 censusVariable = newCensusVariable;
-                updateCharts(true);
-
+                let data = getData(year);
+                // debugger;
+                renderScatterPlot(censusVariable, callType, data);
             }
 
             var updateCharts = (updateLinechart) => {
@@ -144,7 +174,7 @@
                                 weight: 5,
                                 color: '#666',
                                 dashArray: '',
-                                fillOpacity: 1
+                                fillOpacity: .8
                             });
 
                             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -181,7 +211,7 @@
                         weight: 1,
                         dashArray: '3',
                         color: 'rgba(0,0,0,.2)',
-                        fillOpacity: 0.6
+                        fillOpacity: 0.8
                     });
                 }
             }
@@ -210,7 +240,7 @@
 
             window.onload = function() {
                 d3.json('data/censusTracts.json', (mData) => {
-                    d3.json('data/correctedTractData.json', (eData) => {
+                    d3.json('data/tractData0728.json', (eData) => {
                     d3.json('data/monthlyData.json', (monthlyData) => {
                         let iteration = 0;
                         getData = (dataYear = 'All') => {
@@ -227,7 +257,7 @@
                                     dataForTract[measure] = Math.round(dataForTract[measure] * 100) / 100;
                                 });
                                 tractObject[String(tractID)][''][dateString] = dataForTract;
-                                tractObject[String(tractID)][''][dateString]['Median Household Income'] = eData[tractID]['Median Household Income'];
+                                tractObject[String(tractID)][''][dateString][censusVariable] = eData[tractID][censusVariable];
                                 tractObject[String(tractID)][''][dateString]['Household Count'] = eData[tractID]['Household Count'];
 
                                 tracts.push(tractObject)
@@ -279,7 +309,7 @@
 
                         renderScatterPlot = (xAxisMeasure, yAxisMeasure, data) => {
                             scatterPlot.render(data, 
-                            {isTemporal: false, grid: false, tooltip: true, theme: 'light', 
+                            {isTemporal: false, grid: false, tooltip: false, theme: 'light', 
                                 spMeasures: [xAxisMeasure, yAxisMeasure, 'Household Count'], 
                                 scatterPlot, legend: 'hidden', onDotFocus: dotFocus, canDownload: false,
                                 spAxisLabels: [xAxisMeasure, callLabel('')]}, 
@@ -288,7 +318,12 @@
                         }
 
                         renderLinechart = (data) => {
-                            linechart.render(data, {legend: 'compact', theme: 'light', xAxisTimeFormat: () => 'Y', offset: 'Local', hideChartControlPanel: true});
+                            let linechartElem = d3.select('#linechart');
+                            let linechartPrompt = linechartElem.selectAll('.linechartPrompt');
+                            if(linechartPrompt) {
+                                linechartPrompt.remove();
+                            }
+                            linechart.render(data, {legend: 'compact', theme: 'light', xAxisTimeFormat: () => 'Y', hideChartControlPanel: true}, [{color: '#677db7'}]);
                         }
 
 
@@ -305,8 +340,8 @@
     
                         }
 
-                        renderScatterPlot('Median Household Income', 'Violence', data);
-                        renderLinechart(linechartData);
+                        renderScatterPlot(censusVariable, 'Violence', data);
+                        // renderLinechart(linechartData);
                         geojson = createMap(mData, eData, 'Violence');
 
                     });

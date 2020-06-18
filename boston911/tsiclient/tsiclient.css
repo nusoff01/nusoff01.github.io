@@ -854,7 +854,7 @@ select::-ms-expand {
   .tsi-legend.compact {
     margin-left: 20px;
     margin-right: 20px;
-    top: 8px;
+    top: 24px;
     height: 48px !important;
     width: calc(100% - 40px) !important;
     position: absolute;

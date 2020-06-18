@@ -3,13 +3,12 @@ html, body {
     margin: 0;
     box-sizing:border-box;
     color:#0d0f0e;
-    background-color: #EDF2F4;
+    background-color: #F2F7F7;
     height: fit-content;
 }
 
 * {
     box-sizing:border-box;
-    font-family: 'Merriweather', serif !important;
 }
 
 .leaflet-control-attribution {
@@ -35,14 +34,13 @@ html, body {
 
 .subheader {
     font-weight: lighter;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     max-width: 500px;
     margin-bottom: 20px;
 }
 
 .commanding {
-    padding-left: 20px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -52,23 +50,24 @@ html, body {
 
 }
 .commanding select {
-    -webkit-appearance: none; 
-    box-shadow: none !important;
     font-size: 12px;
     color: rgb(36, 21, 21);
     outline: none;
+    font-weight: bold;
+}
+
+select {
     border: 2px solid #677DB7;
+    -webkit-appearance: none; 
+    box-shadow: none !important;
     border-radius: 0px;
     padding: 3px;
-    font-weight: bold;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
 .commanding .selectLabel {
     padding-right: 8px;
-}
-
-#map {
-    height: 100%;
 }
 
 .container {
@@ -97,35 +96,55 @@ html, body {
     flex-basis: 400px;
     position: relative;
     padding: 20px;
+    
 }
 
-.chartContainer .scatterHeader {
+.chartHeader {
     position: absolute;
-    top: 32px;
+    z-index: 2;
+    padding: 4px;
+    background-color: black;
+    color: white;
     font-size: 16px;
-    z-index: 1;
     font-weight: bold;
-    width: calc(100% - 40px);
-    text-align: center;
 }
+.chartHeader select {
+    font-size: inherit;
+    background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 16px;
+    margin-right: 4px;
+    background-image: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/whites/16x16/br_down.png) no-repeat right;
+}
+.scatterHeader {
+    padding:0px;
+    padding-right: 8px;
+
+}
+
+
 
 .muted {
     font-weight: lighter !important;
 }
 
-#chart1 {
+#chart1, #linechart, #map {
     height: 100%;
     width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.03);
+    background-color: white;
 }
 
-.footer {
-    font-size: 12px;
-    height: 20px;
-    line-height: 20px;
-    padding-left: 20px;
-    border-top: 1px solid grey;
-    width: 100%;
+#linechart .linechartPrompt {
+    line-height: 200px;
+    text-align: center;
+    font-style: italic;
+}
 
+
+select {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.03) !important;
 }
 
 .mapContainer {
@@ -162,17 +181,29 @@ a {
         font-size: 20px;
     }
 
-    .chartContainer .scatterHeader {
-        font-size: 12px;
+    .chartHeader {
+        font-size: 11px;
+    }
+
+    .footer {
+        font-size: 11px;
+    }
+
+    .mapContainer {
+        padding-top: 0px;
     }
 }
 
 .content-wrapper {
     margin: 0 auto;
+    padding-top: 20px;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.content-wrapper * {
+    font-family: 'Merriweather', serif !important;
 }
 
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
