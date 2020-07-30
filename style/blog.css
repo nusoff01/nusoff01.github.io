@@ -1,0 +1,158 @@
+.textbox {
+    max-width: 1080px;
+    font-size: 14px;
+    font-family: Merriweather;
+    padding: 12px;
+}
+
+.siteInfo {
+    margin: 0px auto;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.features {
+    max-width: 960px;
+    margin: 20px auto;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    /* border-left: 1px solid rgba(0,0,0,.2); */
+    padding-bottom: 0px;
+}
+
+.featureSectionHeader {
+    text-align: left;
+    width: fit-content;
+    margin-bottom: 12px;
+    font-family: Staatliches;
+    font-size: 20px;
+    padding-left: 4px;
+    background: white;
+    padding: 4px;
+    line-height: 1;
+}
+
+.footer {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 20px;
+    border-top: 1px solid grey;
+    width: 100%;
+
+}
+.featureBox .textbox {
+    border-left: 6px solid purple;
+}
+.featureBox {
+    background-color: white;
+    width: calc(100% - 16px);
+    margin-bottom: 20px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* border-left:1px solid rgba(0,0,0,.3); */
+    border-bottom:1px solid rgba(0,0,0,.3);
+
+    border-radius:4px;
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,.12);;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,.12);;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,.12);
+}
+
+.featureBox .featureDescription {
+    padding: 16px;
+    min-width: 50%;
+    height: 100%;
+    font-family: Merriweather;
+    font-size: 14px;
+}
+.featureBox .featureDescription .featureTitle{
+    font-size: 24px;
+    font-weight: bold;
+}
+.featureBox .featureDescription .featureSubtitle{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.featureBox .featureDescription .featureLongDescription{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    color: rgba(0,0,0,.7);
+    margin-top: 20px;
+}
+.featureBox .featurePicture {
+    width: 480px;
+    min-width: 480px;
+    height: 320px;
+}
+
+.featureBox .featurePicture img {
+    max-height: 100%;
+    max-width:100%;
+}
+
+.visitSite {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px;
+    border: 1px solid none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Merriweather;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.2);
+    transition: background-color .5s;
+}
+.visitSite:hover {
+    background-color: #E2E7E7;
+}
+
+
+@media (max-width: 600px) {
+    .theovert-header {
+        font-size: 20px;
+    }
+
+    .featureSectionHeader {
+        font-size: 16px;
+    }
+    .navbar {
+        height: 24px;
+    }
+    
+    .navButton {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 780px) {
+    .featureBox {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .features {
+        max-width: 560px;
+    }
+
+    .featureBox .featureDescription {
+        width: 100%;
+    }
+
+    .featureBox .featurePicture {
+        margin: 0 auto;
+        max-width: 480px;
+        min-width: unset;
+        width: unset;
+        height: unset;
+        margin-bottom: 72px;
+    }
+}
